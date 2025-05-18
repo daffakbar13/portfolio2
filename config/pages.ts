@@ -18,7 +18,7 @@ export const pagesConfig: PagesConfig = {
     description: "Welcome to my portfolio website.",
     metadata: {
       title: "Home",
-      description: "Naman Barkiya's portfolio website.",
+      description: "M. Daffa Raihan Akbar's portfolio website.",
     },
   },
   skills: {
@@ -27,7 +27,7 @@ export const pagesConfig: PagesConfig = {
     metadata: {
       title: "Skills",
       description:
-        "Naman Barkiya's key skills that define his professional identity.",
+        "M. Daffa Raihan Akbar's key skills that define his professional identity.",
     },
   },
   experience: {
@@ -35,7 +35,7 @@ export const pagesConfig: PagesConfig = {
     description: "Highlighting career journey and impactful projects.",
     metadata: {
       title: "Experience",
-      description: "Naman Barkiya's experience in building web applications.",
+      description: "M. Daffa Raihan Akbar's experience in building web applications.",
     },
   },
   contact: {
@@ -43,7 +43,7 @@ export const pagesConfig: PagesConfig = {
     description: "Let's connect and explore collaborations.",
     metadata: {
       title: "Contact",
-      description: "Contact Naman Barkiya.",
+      description: "Contact M. Daffa Raihan Akbar.",
     },
   },
   contributions: {
@@ -52,15 +52,15 @@ export const pagesConfig: PagesConfig = {
     metadata: {
       title: "Contributions",
       description:
-        "Naman Barkiya's open-source contributions and community involvement.",
+        "M. Daffa Raihan Akbar's open-source contributions and community involvement.",
     },
   },
   resume: {
     title: "Resume",
-    description: "Naman Barkiya's resume.",
+    description: "M. Daffa Raihan Akbar's resume.",
     metadata: {
       title: "Resume",
-      description: "Naman Barkiya's resume.",
+      description: "M. Daffa Raihan Akbar's resume.",
     },
   },
   career: {
@@ -68,7 +68,7 @@ export const pagesConfig: PagesConfig = {
     description: "Professional journey and experience timeline.",
     metadata: {
       title: "Career Timeline",
-      description: "Naman Barkiya's professional journey and career timeline.",
+      description: "M. Daffa Raihan Akbar's professional journey and career timeline.",
     },
   },
 };

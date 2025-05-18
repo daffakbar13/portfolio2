@@ -1,21 +1,21 @@
 export const siteConfig = {
-  name: "Naman Barkiya | Developer Portfolio Template",
-  authorName: "Naman Barkiya",
-  username: "namanbarkiya",
+  name: "M. Daffa Raihan Akbar | Developer Portfolio Template",
+  authorName: "M. Daffa Raihan Akbar",
+  username: "daffakbar13",
   description:
-    "Naman Barkiya's portfolio - A modern, responsive Next.js portfolio for developers. This open-source template can be customized to showcase your own skills, projects, and professional experience.",
+    "M. Daffa Raihan Akbar's portfolio - A modern, responsive Next.js portfolio for developers. This open-source template can be customized to showcase your own skills, projects, and professional experience.",
   url: "https://nbarkiya.xyz",
   links: {
-    twitter: "https://x.com/namanbarkiya",
-    github: "https://github.com/namanbarkiya",
+    twitter: "https://x.com/daffakbar13",
+    github: "https://github.com/daffakbar13",
   },
-  ogImage: "https://nbarkiya.xyz/naman-img.jpg",
+  ogImage: "https://nbarkiya.xyz/daffa2.png",
   iconIco:
     "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357384/assets/naman-favicon.ico",
   logoIcon:
     "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357294/assets/naman-logo.png",
   keywords: [
-    "Naman Barkiya",
+    "M. Daffa Raihan Akbar",
     "Full Stack Developer",
     "Web Developer Portfolio",
     "Next.js portfolio template",

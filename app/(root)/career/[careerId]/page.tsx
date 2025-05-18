@@ -25,16 +25,14 @@ const getYearFromDate = (date: Date): string => {
 
 export default function CareerDetailPage({ params }: CareerDetailPageProps) {
   const career = careerExperiences.find((c) => c.id === params.careerId);
-  const [activeTab, setActiveTab] = useState<
-    "summary" | "achievements" | "skills"
-  >("summary");
+  const [activeTab, setActiveTab] = useState<"summary" | "skills">("summary");
 
   if (!career) {
     redirect("/career");
   }
 
   return (
-    <article className="container relative max-w-3xl py-4 sm:py-6 lg:py-10 px-3 sm:px-4 md:px-6">
+    <article className="container relative max-w-3xl px-3 py-4 sm:py-6 lg:py-10 sm:px-4 md:px-6">
       {/* Desktop back link (hidden on mobile/smaller screens) */}
       <Link
         href="/career"
@@ -43,7 +41,7 @@ export default function CareerDetailPage({ params }: CareerDetailPageProps) {
           "absolute left-[-200px] top-14 hidden xl:inline-flex"
         )}
       >
-        <Icons.chevronLeft className="mr-2 h-4 w-4" />
+        <Icons.chevronLeft className="w-4 h-4 mr-2" />
         All Career Experience
       </Link>
 
@@ -55,7 +53,7 @@ export default function CareerDetailPage({ params }: CareerDetailPageProps) {
           "mb-3 sm:mb-4 inline-flex xl:hidden"
         )}
       >
-        <Icons.chevronLeft className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" />
+        <Icons.chevronLeft className="w-3 h-3 mr-1 sm:mr-2 sm:h-4 sm:w-4" />
         Back
       </Link>
 
@@ -63,10 +61,10 @@ export default function CareerDetailPage({ params }: CareerDetailPageProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-card border border-border rounded-lg p-4 sm:p-6 md:p-8"
+        className="p-4 border rounded-lg bg-card border-border sm:p-6 md:p-8"
       >
         {/* Date badge at the top of the card */}
-        <div className="mb-4 flex justify-center sm:justify-start">
+        <div className="flex justify-center mb-4 sm:justify-start">
           <div className="inline-flex items-center bg-background border border-primary px-2 py-0.5 rounded-full text-xs font-medium text-primary shadow-sm">
             {typeof career.endDate === "string"
               ? getYearFromDate(career.startDate) + " - Present"
@@ -77,9 +75,9 @@ export default function CareerDetailPage({ params }: CareerDetailPageProps) {
         </div>
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 mb-4 md:mb-0">
+          <div className="flex flex-col items-center gap-3 mb-4 sm:flex-row sm:items-start sm:gap-4 md:mb-0">
             {career.logo ? (
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-primary overflow-hidden bg-white">
+              <div className="relative w-16 h-16 overflow-hidden bg-white border-2 rounded-full sm:w-20 sm:h-20 border-primary">
                 <Image
                   src={career.logo}
                   alt={career.company}
@@ -89,17 +87,17 @@ export default function CareerDetailPage({ params }: CareerDetailPageProps) {
                 />
               </div>
             ) : (
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary flex items-center justify-center">
-                <Icons.work className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
+              <div className="flex items-center justify-center w-16 h-16 rounded-full sm:w-20 sm:h-20 bg-primary">
+                <Icons.work className="w-6 h-6 text-white sm:w-8 sm:h-8 md:w-10 md:h-10" />
               </div>
             )}
             <div className="text-center sm:text-left">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
-                <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">
+              <div className="flex flex-col gap-1 mb-1 sm:flex-row sm:items-center sm:gap-3">
+                <h1 className="text-xl font-bold sm:text-2xl md:text-3xl">
                   {career.position}
                 </h1>
               </div>
-              <div className="flex items-center justify-center sm:justify-start gap-2">
+              <div className="flex items-center justify-center gap-2 sm:justify-start">
                 <h2 className="text-base sm:text-lg md:text-xl">
                   {career.company}
                 </h2>
@@ -119,25 +117,13 @@ export default function CareerDetailPage({ params }: CareerDetailPageProps) {
         </div>
 
         <div className="mt-6 sm:mt-8">
-          <div className="flex border-b border-border mb-4 sm:mb-6 overflow-x-auto">
+          <div className="flex mb-4 overflow-x-auto border-b border-border sm:mb-6">
             <button
               className={`py-1 sm:py-2 px-2 sm:px-4 font-medium text-xs sm:text-sm relative whitespace-nowrap ${activeTab === "summary" ? "text-primary" : "text-muted-foreground"}`}
               onClick={() => setActiveTab("summary")}
             >
               Summary
               {activeTab === "summary" && (
-                <motion.div
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-                  layoutId="activeTabIndicator"
-                />
-              )}
-            </button>
-            <button
-              className={`py-1 sm:py-2 px-2 sm:px-4 font-medium text-xs sm:text-sm relative whitespace-nowrap ${activeTab === "achievements" ? "text-primary" : "text-muted-foreground"}`}
-              onClick={() => setActiveTab("achievements")}
-            >
-              Achievements
-              {activeTab === "achievements" && (
                 <motion.div
                   className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
                   layoutId="activeTabIndicator"
@@ -167,7 +153,7 @@ export default function CareerDetailPage({ params }: CareerDetailPageProps) {
           >
             {activeTab === "summary" && (
               <div>
-                <ul className="list-disc pl-4 sm:pl-5 md:pl-6 space-y-1 sm:space-y-2 md:space-y-3">
+                <ul className="pl-4 space-y-1 list-disc sm:pl-5 md:pl-6 sm:space-y-2 md:space-y-3">
                   {career.description.map((desc, idx) => (
                     <motion.li
                       key={idx}
@@ -183,24 +169,6 @@ export default function CareerDetailPage({ params }: CareerDetailPageProps) {
               </div>
             )}
 
-            {activeTab === "achievements" && (
-              <div>
-                <ul className="list-disc pl-4 sm:pl-5 md:pl-6 space-y-1 sm:space-y-2 md:space-y-3">
-                  {career.achievements.map((achievement, idx) => (
-                    <motion.li
-                      key={idx}
-                      className="text-xs sm:text-sm md:text-base"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: idx * 0.1 }}
-                    >
-                      {achievement}
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
             {activeTab === "skills" && (
               <div className="pt-2">
                 <motion.div
@@ -210,7 +178,7 @@ export default function CareerDetailPage({ params }: CareerDetailPageProps) {
                 >
                   <ChipContainer textArr={career.skills} />
                 </motion.div>
-                <p className="mt-4 sm:mt-6 text-xs sm:text-sm text-muted-foreground">
+                <p className="mt-4 text-xs sm:mt-6 sm:text-sm text-muted-foreground">
                   These are the primary technologies and skills utilized during
                   my time at {career.company}.
                 </p>
@@ -236,7 +204,7 @@ export default function CareerDetailPage({ params }: CareerDetailPageProps) {
             "sm:text-sm"
           )}
         >
-          <Icons.chevronLeft className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" />
+          <Icons.chevronLeft className="w-3 h-3 mr-1 sm:mr-2 sm:h-4 sm:w-4" />
           All Career Experience
         </Link>
       </motion.div>

@@ -18,7 +18,11 @@ interface TimelineItemProps {
 
 // Helper function to extract year from date
 const getYearFromDate = (date: Date): string => {
-  return new Date(date).getFullYear().toString();
+  const d = new Date(date);
+  return d.toLocaleString("en-US", {
+    month: "short",
+    year: "numeric",
+  });
 };
 
 const TimelineItem: React.FC<TimelineItemProps> = ({
@@ -37,18 +41,18 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
       )}
 
       {/* Timeline item */}
-      <div className="flex mb-8 relative">
+      <div className="relative flex mb-8">
         {/* Timeline dot and date */}
         <div className="relative">
           <motion.div
-            className="w-8 h-8 sm:w-16 sm:h-16 rounded-full flex items-center justify-center z-10 relative"
+            className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full sm:w-16 sm:h-16"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.05 }}
           >
             {experience.logo ? (
-              <div className="relative w-8 h-8 sm:w-16 sm:h-16 rounded-full border-2 border-primary overflow-hidden bg-white">
+              <div className="relative w-8 h-8 overflow-hidden bg-white border-2 rounded-full sm:w-16 sm:h-16 border-primary">
                 <Image
                   src={experience.logo}
                   alt={experience.company}
@@ -57,8 +61,8 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
                 />
               </div>
             ) : (
-              <div className="w-8 h-8 sm:w-16 sm:h-16 rounded-full bg-primary flex items-center justify-center">
-                <Icons.work className="w-4 h-4 sm:w-8 sm:h-8 text-white" />
+              <div className="flex items-center justify-center w-8 h-8 rounded-full sm:w-16 sm:h-16 bg-primary">
+                <Icons.work className="w-4 h-4 text-white sm:w-8 sm:h-8" />
               </div>
             )}
           </motion.div>
@@ -66,7 +70,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 
         {/* Content card */}
         <motion.div
-          className="ml-3 sm:ml-6 flex-1"
+          className="flex-1 ml-3 sm:ml-6"
           initial={{ x: -10, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.4 }}
@@ -81,13 +85,13 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             whileHover={{ y: -2 }}
             layout
           >
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
               <div>
-                <h3 className="text-lg sm:text-xl font-bold">
+                <h3 className="text-lg font-bold sm:text-xl">
                   {experience.position}
                 </h3>
                 <div className="flex items-center">
-                  <span className="text-muted-foreground text-sm sm:text-base">
+                  <span className="text-sm text-muted-foreground sm:text-base">
                     {experience.company}
                   </span>
                   {experience.companyUrl && (
@@ -105,7 +109,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
                   {experience.location}
                 </div>
               </div>
-              <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2">
+              <div className="flex flex-row items-center justify-between gap-2 sm:flex-col sm:items-end sm:justify-start">
                 <div className="inline-flex items-center justify-center bg-background border border-primary px-2 py-0.5 rounded-full text-xs font-medium text-primary shadow-sm">
                   {typeof experience.endDate === "string"
                     ? getYearFromDate(experience.startDate) + " - Now"
@@ -132,12 +136,12 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
               className="overflow-hidden"
             >
               {isExpanded && (
-                <div className="pt-3 mt-3 sm:pt-4 sm:mt-4 border-t border-border">
+                <div className="pt-3 mt-3 border-t sm:pt-4 sm:mt-4 border-border">
                   <div className="mb-3 sm:mb-4">
-                    <h4 className="font-medium mb-1 sm:mb-2 text-xs sm:text-sm">
+                    <h4 className="mb-1 text-xs font-medium sm:mb-2 sm:text-sm">
                       Summary
                     </h4>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1">
+                    <ul className="pl-4 space-y-1 list-disc sm:pl-5">
                       {experience.description.map((desc, idx) => (
                         <li key={idx} className="text-xs sm:text-sm">
                           {desc}
@@ -147,20 +151,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
                   </div>
 
                   <div className="mb-3 sm:mb-4">
-                    <h4 className="font-medium mb-1 sm:mb-2 text-xs sm:text-sm">
-                      Key Achievements
-                    </h4>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1">
-                      {experience.achievements.map((achievement, idx) => (
-                        <li key={idx} className="text-xs sm:text-sm">
-                          {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="mb-3 sm:mb-4">
-                    <h4 className="font-medium mb-1 sm:mb-2 text-xs sm:text-sm">
+                    <h4 className="mb-1 text-xs font-medium sm:mb-2 sm:text-sm">
                       Skills
                     </h4>
                     <ChipContainer textArr={experience.skills} />
@@ -168,11 +159,11 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 
                   <Link
                     href={`/career/${experience.id}`}
-                    className="inline-flex items-center mt-1 sm:mt-2 text-xs sm:text-sm font-medium text-primary hover:underline"
+                    className="inline-flex items-center mt-1 text-xs font-medium sm:mt-2 sm:text-sm text-primary hover:underline"
                     onClick={(e) => e.stopPropagation()}
                   >
                     View Details
-                    <Icons.chevronRight className="ml-1 w-3 h-3 sm:w-4 sm:h-4" />
+                    <Icons.chevronRight className="w-3 h-3 ml-1 sm:w-4 sm:h-4" />
                   </Link>
                 </div>
               )}
@@ -210,7 +201,7 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
   };
 
   return (
-    <div className="container max-w-5xl mx-auto py-4 sm:py-8 px-2 sm:px-4">
+    <div className="container max-w-5xl px-2 py-4 mx-auto sm:py-8 sm:px-4">
       {sortedExperiences.map((experience, index) => (
         <TimelineItem
           key={experience.id}

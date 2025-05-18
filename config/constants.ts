@@ -52,12 +52,16 @@ export type ValidSkills =
   | "PyTorch"
   | "Spring Boot"
   | "Laravel"
-  | "PHP";
+  | "PHP"
+  | "ElasticSearch";
 
 export type ValidCategory =
-  | "Full Stack"
+  | "Full Stack Developer"
   | "Frontend"
   | "Backend"
+  | "On Site"
+  | "Remote"
+  | "Hybrid"
   | "UI/UX"
   | "Web Dev"
   | "Mobile Dev"

@@ -10,7 +10,7 @@ import CustomTooltip from "@/components/ui/custom-tooltip";
 import { Experiences } from "@/config/experience";
 import { siteConfig } from "@/config/site";
 import { cn, formatDateFromObj } from "@/lib/utils";
-import namanImg from "@/public/naman-img.jpg";
+import daffaImg from "@/public/daffa2.png";
 
 interface ExperiencePageProps {
   params: {
@@ -18,7 +18,7 @@ interface ExperiencePageProps {
   };
 }
 
-const githubUsername = "namanbarkiya";
+const githubUsername = "daffakbar13";
 
 export default function Experience({ params }: ExperiencePageProps) {
   let exp = Experiences.find((val) => val.id === params.expId);
@@ -35,7 +35,7 @@ export default function Experience({ params }: ExperiencePageProps) {
           "absolute left-[-200px] top-14 hidden xl:inline-flex"
         )}
       >
-        <Icons.chevronLeft className="mr-2 h-4 w-4" />
+        <Icons.chevronLeft className="w-4 h-4 mr-2" />
         All Experience
       </Link>
       <div>
@@ -45,7 +45,7 @@ export default function Experience({ params }: ExperiencePageProps) {
         >
           {formatDateFromObj(exp.startDate)}
         </time>
-        <h1 className="flex items-center justify-between mt-2 font-heading text-4xl leading-tight lg:text-5xl">
+        <h1 className="flex items-center justify-between mt-2 text-4xl leading-tight font-heading lg:text-5xl">
           {exp.companyName}
           <div className="flex items-center">
             {exp.githubLink && (
@@ -65,21 +65,21 @@ export default function Experience({ params }: ExperiencePageProps) {
           </div>
         </h1>
         <ChipContainer textArr={exp.category} />
-        <div className="mt-4 flex space-x-4">
+        <div className="flex mt-4 space-x-4">
           <Link
             href={siteConfig.links.github}
             className="flex items-center space-x-2 text-sm"
           >
             <Image
-              src={namanImg}
-              alt={"naman"}
+              src={daffaImg}
+              alt={"daffa"}
               width={42}
               height={42}
               className="rounded-full bg-background"
             />
 
-            <div className="flex-1 text-left leading-tight">
-              <p className="font-medium">{"Naman Barkiya"}</p>
+            <div className="flex-1 leading-tight text-left">
+              <p className="font-medium">{"M. Daffa Raihan Akbar"}</p>
               <p className="text-[12px] text-muted-foreground">
                 @{siteConfig.username}
               </p>
@@ -93,19 +93,19 @@ export default function Experience({ params }: ExperiencePageProps) {
         alt={exp.companyName}
         width={720}
         height={405}
-        className="my-8 rounded-md border bg-muted transition-colors"
+        className="my-8 transition-colors border rounded-md bg-muted"
         priority
       />
 
       <div className="mb-7 ">
-        <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
+        <h2 className="inline-block mb-2 text-3xl leading-tight font-heading lg:text-3xl">
           Tech Stack
         </h2>
         <ChipContainer textArr={exp.techStack} />
       </div>
 
       <div className="mb-7 ">
-        <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
+        <h2 className="inline-block mb-2 text-3xl leading-tight font-heading lg:text-3xl">
           Description
         </h2>
         {/* {<exp.descriptionComponent />} */}
@@ -116,13 +116,15 @@ export default function Experience({ params }: ExperiencePageProps) {
       </div>
 
       <div className="mb-7 ">
-        <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-5">
-          Page Info
-        </h2>
+        {!!exp.pagesInfoArr.length && (
+          <h2 className="inline-block mb-5 text-3xl leading-tight font-heading lg:text-3xl">
+            Page Info
+          </h2>
+        )}
         {exp.pagesInfoArr.map((page, ind) => (
           <div key={ind}>
-            <h3 className="flex items-center font-heading text-xl leading-tight lg:text-xl mt-3">
-              <Icons.star className="h-5 w-5 mr-2" /> {page.title}
+            <h3 className="flex items-center mt-3 text-xl leading-tight font-heading lg:text-xl">
+              <Icons.star className="w-5 h-5 mr-2" /> {page.title}
             </h3>
             <div>
               <p>{page.description}</p>
@@ -133,7 +135,7 @@ export default function Experience({ params }: ExperiencePageProps) {
                   alt={img}
                   width={720}
                   height={405}
-                  className="my-4 rounded-md border bg-muted transition-colors"
+                  className="my-4 transition-colors border rounded-md bg-muted"
                   priority
                 />
               ))}
@@ -148,7 +150,7 @@ export default function Experience({ params }: ExperiencePageProps) {
           href="/experience"
           className={cn(buttonVariants({ variant: "ghost" }))}
         >
-          <Icons.chevronLeft className="mr-2 h-4 w-4" />
+          <Icons.chevronLeft className="w-4 h-4 mr-2" />
           All Experience
         </Link>
       </div>

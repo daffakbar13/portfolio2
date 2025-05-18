@@ -7,17 +7,15 @@ import { AnimatedSection } from "@/components/common/animated-section";
 import { AnimatedText } from "@/components/common/animated-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
-import ContributionCard from "@/components/contributions/contribution-card";
 import ProjectCard from "@/components/experience/project-card";
 import SkillsCard from "@/components/skills/skills-card";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { featuredContributions } from "@/config/contributions";
 import { featuredExperiences } from "@/config/experience";
 import { pagesConfig } from "@/config/pages";
 import { siteConfig } from "@/config/site";
 import { featuredSkills } from "@/config/skills";
 import { cn } from "@/lib/utils";
-import namanImg from "@/public/naman-img.jpg";
+import daffaImg from "@/public/daffa2.png";
 
 export const metadata: Metadata = {
   title: `${pagesConfig.home.metadata.title} | Modern Next.js Developer Portfolio Template`,
@@ -71,45 +69,46 @@ export default function IndexPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
 
-      <section className="space-y-6 pb-8 pt-6 mb-0 md:pb-12 md:py-20 lg:py-32 h-screen flex items-center">
+      <section className="flex items-center h-screen pt-6 pb-8 mb-0 space-y-6 md:pb-12 md:py-20 lg:py-32">
         <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center -mt-20">
           <Image
-            src={namanImg}
+            src={daffaImg}
             height={100}
             width={100}
             sizes="100vw"
             className="bg-primary rounded-full mb-0 h-auto md:mb-2 w-[60%] max-w-[16rem] border-8 border-primary"
-            alt="Naman Barkiya - Full Stack Developer Portfolio"
+            alt="M. Daffa Raihan Akbar - Full Stack Developer Portfolio"
             priority
           />
           <AnimatedText
             as="h1"
             delay={0.2}
-            className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
+            className="text-3xl font-heading sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Naman Barkiya
+            M. Daffa Raihan Akbar
           </AnimatedText>
           <AnimatedText
             as="h3"
             delay={0.4}
-            className="font-heading text-base sm:text-xl md:text-xl lg:text-2xl"
+            className="text-base font-heading sm:text-xl md:text-xl lg:text-2xl"
           >
             Full Stack Developer
           </AnimatedText>
-          <div className="mt-4 max-w-[42rem] text-center">
-            <p className="leading-normal text-muted-foreground text-sm sm:text-base">
-              Open-source Next.js portfolio template. Fork this on GitHub to
-              create your own developer portfolio.
-            </p>
-          </div>
+          <AnimatedText
+            as="h3"
+            delay={0.4}
+            className="text-xs sm:text-sm md:text-md lg:text-lg"
+          >
+            Jakarta, Indonesia
+          </AnimatedText>
 
-          <div className="flex flex-col mt-10 items-center justify-center sm:flex-row sm:space-x-4 gap-3">
+          <div className="flex flex-col items-center justify-center gap-3 mt-10 sm:flex-row sm:space-x-4">
             <AnimatedText delay={0.6}>
               <Link
-                href={"https://github.com/namanbarkiya"}
+                href={"https://github.com/daffakbar13"}
                 target="_blank"
                 className={cn(buttonVariants({ size: "lg" }))}
-                aria-label="View Naman Barkiya's GitHub profile"
+                aria-label="View M. Daffa Raihan Akbar's GitHub profile"
               >
                 <Icons.gitHub className="w-4 h-4 mr-2" /> GitHub
               </Link>
@@ -124,19 +123,19 @@ export default function IndexPage() {
                     size: "lg",
                   })
                 )}
-                aria-label="Contact Naman Barkiya"
+                aria-label="Contact M. Daffa Raihan Akbar"
               >
                 <Icons.contact className="w-4 h-4 mr-2" /> Contact
               </Link>
             </AnimatedText>
           </div>
           <AnimatedText delay={1.2}>
-            <Icons.chevronDown className="h-6 w-6 mt-10" />
+            <Icons.chevronDown className="w-6 h-6 mt-10" />
           </AnimatedText>
         </div>
       </section>
       <AnimatedSection
-        className="container space-y-6 bg-muted py-10"
+        className="container py-10 space-y-6 bg-muted"
         id="skills"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
@@ -158,14 +157,14 @@ export default function IndexPage() {
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/skills">
             <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
+              <Icons.chevronDown className="w-4 h-4 mr-2" /> View All
             </Button>
           </Link>
         </AnimatedText>
       </AnimatedSection>
       <AnimatedSection
         direction="right"
-        className="container space-y-6 py-10 my-14"
+        className="container py-10 space-y-6 my-14"
         id="experience"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
@@ -183,7 +182,7 @@ export default function IndexPage() {
             {pagesConfig.experience.description}
           </AnimatedText>
         </div>
-        <div className="mx-auto grid justify-center gap-4 md:w-full lg:grid-cols-3">
+        <div className="grid justify-center gap-4 mx-auto md:w-full lg:grid-cols-3">
           {featuredExperiences.map((exp, index) => (
             <AnimatedSection
               key={exp.id}
@@ -197,7 +196,7 @@ export default function IndexPage() {
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/experience">
             <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
+              <Icons.chevronDown className="w-4 h-4 mr-2" /> View All
             </Button>
           </Link>
         </AnimatedText>
@@ -207,9 +206,9 @@ export default function IndexPage() {
                     </p>
                 </div> */}
       </AnimatedSection>
-      <AnimatedSection
+      {/* <AnimatedSection
         direction="left"
-        className="container space-y-6 bg-muted py-10 my-14"
+        className="container py-10 space-y-6 bg-muted my-14"
         id="contributions"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
@@ -227,17 +226,17 @@ export default function IndexPage() {
             {pagesConfig.contributions.description}
           </AnimatedText>
         </div>
-        <div className="mx-auto justify-center gap-4 md:w-full lg:grid-cols-3">
+        <div className="justify-center gap-4 mx-auto md:w-full lg:grid-cols-3">
           <ContributionCard contributions={featuredContributions} />
         </div>
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/contributions">
             <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
+              <Icons.chevronDown className="w-4 h-4 mr-2" /> View All
             </Button>
           </Link>
         </AnimatedText>
-      </AnimatedSection>
+      </AnimatedSection> */}
     </ClientPageWrapper>
   );
 }

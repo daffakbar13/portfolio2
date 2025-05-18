@@ -12,10 +12,10 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="relative p-6 max-w-sm bg-background border border-border rounded-lg">
+    <div className="relative h-full max-w-sm p-6 border rounded-lg bg-background border-border">
       <div className="relative w-full h-[200px]">
         <Image
-          className="rounded-lg border border-border object-cover"
+          className="object-cover border rounded-lg border-border"
           src={project.companyLogoImg}
           alt="img"
           fill
@@ -25,10 +25,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <h5 className="text-2xl font-bold tracking-tight text-foreground">
           {project.companyName}
         </h5>
-        <p className="line-clamp-3 font-normal text-muted-foreground">
+        <p className="font-normal line-clamp-3 text-muted-foreground">
           {project.shortDescription}
         </p>
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex flex-wrap gap-2">
           <ChipContainer textArr={project.category} />
         </div>
         <Link href={`/experience/${project.id}`}>
@@ -38,11 +38,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </Button>
         </Link>
       </div>
-      <div className="absolute bottom-4 right-4 p-3 rounded-full bg-background border border-border">
+      <div className="absolute p-3 border rounded-full bottom-4 right-4 bg-background border-border">
         {project.type === "Personal Project" ? (
-          <Icons.userFill className="h-4 w-4" />
+          <Icons.userFill className="w-4 h-4" />
         ) : (
-          <Icons.work className="h-4 w-4" />
+          <Icons.work className="w-4 h-4" />
         )}
       </div>
     </div>

@@ -42,15 +42,28 @@ import {
 } from "react-icons/hi";
 import { IoIosGitBranch } from "react-icons/io";
 import {
+  SiAdobexd,
   SiAmazonaws,
+  SiAmazons3,
   SiAngular,
+  SiBitbucket,
   SiBootstrap,
+  SiCodeigniter,
   SiCss3,
+  SiDocker,
+  SiElasticsearch,
   SiExpress,
+  SiFigma,
+  SiGithub,
+  SiGitlab,
   SiGmail,
+  SiGoogleanalytics,
+  SiGooglemaps,
   SiGraphql,
   SiHtml5,
   SiJavascript,
+  SiJira,
+  SiLaravel,
   SiLinkedin,
   SiMongodb,
   SiMui,
@@ -59,13 +72,31 @@ import {
   SiNetlify,
   SiNextdotjs,
   SiNodedotjs,
+  SiNotion,
+  SiPhp,
+  SiPostgresql,
   SiReact,
   SiRedux,
   SiSocketdotio,
   SiTailwindcss,
   SiTwitter,
   SiTypescript,
+  SiVuedotjs,
 } from "react-icons/si";
+
+import Flag from "react-world-flags";
+
+export const Flags = {
+  ID: (props: React.ComponentProps<"img">) => (
+    <Flag code="ID" width={75} {...props} />
+  ),
+  SA: (props: React.ComponentProps<"img">) => (
+    <Flag code="SA" width={75} {...props} />
+  ),
+  US: (props: React.ComponentProps<"img">) => (
+    <Flag code="US" width={94} {...props} />
+  ),
+};
 
 export const Icons = {
   contact: Phone,
@@ -125,6 +156,23 @@ export const Icons = {
   twitter: SiTwitter,
   linkedin: SiLinkedin,
   userFill: BiSolidUser,
+  github: SiGithub,
+  bitbucket: SiBitbucket,
+  gitlab: SiGitlab,
+  jira: SiJira,
+  docker: SiDocker,
+  postgreSql: SiPostgresql,
+  php: SiPhp,
+  laravel: SiLaravel,
+  codeigniter: SiCodeigniter,
+  vueJs: SiVuedotjs,
+  adobeXD: SiAdobexd,
+  s3: SiAmazons3,
+  elasticSearch: SiElasticsearch,
+  figma: SiFigma,
+  googleAnalytics: SiGoogleanalytics,
+  googleMaps: SiGooglemaps,
+  notion: SiNotion,
   work: HiBriefcase,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
