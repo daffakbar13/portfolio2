@@ -11,9 +11,9 @@ export const siteConfig = {
   },
   ogImage: "https://nbarkiya.xyz/daffa2.png",
   iconIco:
-    "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357384/assets/naman-favicon.ico",
+    "https://api.logo.com/api/v2/images?design=lg_DmWBUZNybLLarqDlJ0&u=3355c4fae3283be15e48aec23df7125c97369e64f5193638e0d65ec1f1ca6e96&width=500&height=400&margins=100&fit=contain&format=webp&quality=60&tightBounds=true",
   logoIcon:
-    "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357294/assets/naman-logo.png",
+    "https://api.logo.com/api/v2/images?design=lg_DmWBUZNybLLarqDlJ0&u=3355c4fae3283be15e48aec23df7125c97369e64f5193638e0d65ec1f1ca6e96&width=500&height=400&margins=100&fit=contain&format=webp&quality=60&tightBounds=true",
   keywords: [
     "M. Daffa Raihan Akbar",
     "Full Stack Developer",

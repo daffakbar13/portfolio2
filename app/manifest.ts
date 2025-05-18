@@ -12,12 +12,12 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#000000",
     icons: [
       {
-        src: "/favicon.ico",
+        src: "/daffa-logo.png",
         sizes: "64x64",
         type: "image/png",
       },
       {
-        src: "/favicon.ico",
+        src: "/daffa-logo.png",
         sizes: "64x64",
         type: "image/png",
         purpose: "maskable",
