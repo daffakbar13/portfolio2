@@ -4,8 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "M. Daffa Raihan Akbar Portfolio",
     short_name: "Daffa's Portfolio",
-    description:
-      "M. Daffa Raihan Akbar's modern developer portfolio built with Next.js - available as an open-source template",
+    description: "M. Daffa Raihan Akbar's portfolio.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
@@ -25,7 +24,6 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     categories: [
       "portfolio",
-      "template",
       "development",
       "nextjs",
       "react",

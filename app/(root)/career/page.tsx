@@ -8,12 +8,12 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: `${pagesConfig.career.metadata.title} | Interactive Developer Timeline`,
-  description: `${pagesConfig.career.metadata.description} This interactive career timeline showcases professional experience in a visually appealing way. Part of our open-source Next.js portfolio template.`,
+  description: `${pagesConfig.career.metadata.description} This interactive career timeline showcases professional experience in a visually appealing way.`,
   keywords: [
-    "career timeline template",
+    "career timeline",
     "interactive timeline",
     "developer experience",
-    "portfolio template",
+    "portfolio",
     "Next.js",
   ],
   alternates: {
