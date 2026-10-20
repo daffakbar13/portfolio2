@@ -128,6 +128,20 @@ export default function IndexPage() {
                 <Icons.contact className="w-4 h-4 mr-2" /> Contact
               </Link>
             </AnimatedText>
+            <AnimatedText delay={1.0}>
+              <Link
+                href={"/resume"}
+                className={cn(
+                  buttonVariants({
+                    variant: "outline",
+                    size: "lg",
+                  })
+                )}
+                aria-label="View M. Daffa Raihan Akbar's resume"
+              >
+                <Icons.post className="w-4 h-4 mr-2" /> Resume
+              </Link>
+            </AnimatedText>
           </div>
           <AnimatedText delay={1.2}>
             <Icons.chevronDown className="w-6 h-6 mt-10" />
