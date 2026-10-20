@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { Icons } from "@/components/common/icons";
 import ChipContainer from "@/components/ui/chip-container";
@@ -189,15 +189,11 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
     return dateB.getTime() - dateA.getTime();
   });
 
-  // Auto-expand the first item on initial load
-  useEffect(() => {
-    if (sortedExperiences.length > 0 && expandedId === null) {
-      setExpandedId(sortedExperiences[0].id);
-    }
-  }, [sortedExperiences, expandedId]);
+  // Fall back to the first item when nothing is expanded
+  const activeId = expandedId ?? sortedExperiences[0]?.id ?? null;
 
   const toggleExpand = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
+    setExpandedId(activeId === id ? null : id);
   };
 
   return (
@@ -207,7 +203,7 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
           key={experience.id}
           experience={experience}
           isLast={index === sortedExperiences.length - 1}
-          expandedId={expandedId}
+          expandedId={activeId}
           toggleExpand={toggleExpand}
         />
       ))}

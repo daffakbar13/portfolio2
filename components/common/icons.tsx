@@ -35,6 +35,7 @@ import {
 import { AiFillStar } from "react-icons/ai";
 import { BiLaugh, BiSolidUser } from "react-icons/bi";
 import { BsInfoCircle, BsQuestionCircle } from "react-icons/bs";
+import { FaAws, FaCss3Alt, FaLinkedin, FaTwitter } from "react-icons/fa";
 import {
   HiBriefcase,
   HiOutlineExternalLink,
@@ -42,14 +43,10 @@ import {
 } from "react-icons/hi";
 import { IoIosGitBranch } from "react-icons/io";
 import {
-  SiAdobexd,
-  SiAmazonaws,
-  SiAmazons3,
   SiAngular,
   SiBitbucket,
   SiBootstrap,
   SiCodeigniter,
-  SiCss3,
   SiDocker,
   SiElasticsearch,
   SiExpress,
@@ -64,7 +61,6 @@ import {
   SiJavascript,
   SiJira,
   SiLaravel,
-  SiLinkedin,
   SiMongodb,
   SiMui,
   SiMysql,
@@ -79,10 +75,10 @@ import {
   SiRedux,
   SiSocketdotio,
   SiTailwindcss,
-  SiTwitter,
   SiTypescript,
   SiVuedotjs,
 } from "react-icons/si";
+import { TbBrandAdobeXd } from "react-icons/tb";
 
 import Flag from "react-world-flags";
 
@@ -132,10 +128,10 @@ export const Icons = {
   link: HiOutlineLink,
   externalLink: HiOutlineExternalLink,
   star: AiFillStar,
-  amazonaws: SiAmazonaws,
+  amazonaws: FaAws,
   angular: SiAngular,
   bootstrap: SiBootstrap,
-  css3: SiCss3,
+  css3: FaCss3Alt,
   express: SiExpress,
   graphql: SiGraphql,
   html5: SiHtml5,
@@ -153,8 +149,8 @@ export const Icons = {
   tailwindcss: SiTailwindcss,
   typescript: SiTypescript,
   gmail: SiGmail,
-  twitter: SiTwitter,
-  linkedin: SiLinkedin,
+  twitter: FaTwitter,
+  linkedin: FaLinkedin,
   userFill: BiSolidUser,
   github: SiGithub,
   bitbucket: SiBitbucket,
@@ -166,8 +162,8 @@ export const Icons = {
   laravel: SiLaravel,
   codeigniter: SiCodeigniter,
   vueJs: SiVuedotjs,
-  adobeXD: SiAdobexd,
-  s3: SiAmazons3,
+  adobeXD: TbBrandAdobeXd,
+  s3: FaAws,
   elasticSearch: SiElasticsearch,
   figma: SiFigma,
   googleAnalytics: SiGoogleanalytics,
