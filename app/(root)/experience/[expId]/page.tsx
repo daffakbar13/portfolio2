@@ -13,15 +13,16 @@ import { cn, formatDateFromObj } from "@/lib/utils";
 import daffaImg from "@/public/daffa2.png";
 
 interface ExperiencePageProps {
-  params: {
+  params: Promise<{
     expId: string;
-  };
+  }>;
 }
 
 const githubUsername = "daffakbar13";
 
-export default function Experience({ params }: ExperiencePageProps) {
-  let exp = Experiences.find((val) => val.id === params.expId);
+export default async function Experience({ params }: ExperiencePageProps) {
+  const { expId } = await params;
+  let exp = Experiences.find((val) => val.id === expId);
   if (!exp) {
     redirect("/experience");
   }
@@ -40,7 +41,7 @@ export default function Experience({ params }: ExperiencePageProps) {
       </Link>
       <div>
         <time
-          dateTime={Date.now().toString()}
+          dateTime={exp.startDate.toISOString()}
           className="block text-sm text-muted-foreground"
         >
           {formatDateFromObj(exp.startDate)}

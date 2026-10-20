@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { useState } from "react";
+import { use, useState } from "react";
 
 import { Icons } from "@/components/common/icons";
 import { buttonVariants } from "@/components/ui/button";
@@ -13,9 +13,9 @@ import { careerExperiences } from "@/config/career";
 import { cn } from "@/lib/utils";
 
 interface CareerDetailPageProps {
-  params: {
+  params: Promise<{
     careerId: string;
-  };
+  }>;
 }
 
 // Helper function to extract year from date
@@ -24,7 +24,8 @@ const getYearFromDate = (date: Date): string => {
 };
 
 export default function CareerDetailPage({ params }: CareerDetailPageProps) {
-  const career = careerExperiences.find((c) => c.id === params.careerId);
+  const { careerId } = use(params);
+  const career = careerExperiences.find((c) => c.id === careerId);
   const [activeTab, setActiveTab] = useState<"summary" | "skills">("summary");
 
   if (!career) {
