@@ -9,5 +9,5 @@ export default defineConfig({
 	reporter: 'list',
 	use: { baseURL, trace: 'on-first-retry', screenshot: 'only-on-failure', video: 'retain-on-failure' },
 	projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
-	webServer: { command: 'npm run dev', url: baseURL, reuseExistingServer: true, timeout: 120000 },
+	webServer: { command: 'npm run dev', url: baseURL, env: { PORT: '3000' }, reuseExistingServer: true, timeout: 120000 },
 });
