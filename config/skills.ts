@@ -44,9 +44,9 @@ export const skillsUnsorted: skillsInterface[] = [
     icon: Icons.mongodb,
   },
   {
-    name: "Vue.js",
+    name: "Vue 3 / Pinia",
     description:
-      "Build interactive web apps with reactive components, and a flexible ecosystem.",
+      "Build reactive interfaces with the Composition API and typed Pinia stores.",
     rating: 5,
     icon: Icons.vueJs,
   },
@@ -102,6 +102,44 @@ export const skillsUnsorted: skillsInterface[] = [
     icon: Icons.bitbucket,
   },
   {
+    name: "AI-assisted development (Claude Code)",
+    description: "Plan, build, review and test with AI agents in the loop.",
+    rating: 4,
+    icon: Icons.claude,
+  },
+  {
+    name: "Redis",
+    description:
+      "Cache hot data and keep counters and locks in a fast in-memory store.",
+    rating: 4,
+    icon: Icons.redis,
+  },
+  {
+    name: "RabbitMQ",
+    description:
+      "Run background jobs and async workflows through reliable message queues.",
+    rating: 4,
+    icon: Icons.rabbitmq,
+  },
+  {
+    name: "Kibana",
+    description: "Search logs and build dashboards to debug and monitor services.",
+    rating: 4,
+    icon: Icons.kibana,
+  },
+  {
+    name: "Playwright",
+    description: "Write end-to-end tests that drive real browsers.",
+    rating: 4,
+    icon: Icons.playwright,
+  },
+  {
+    name: "Docker",
+    description: "Containerize apps for consistent and scalable deployment.",
+    rating: 4,
+    icon: Icons.docker,
+  },
+  {
     name: "Nest.js",
     description:
       "Create scalable and modular applications with a progressive Node.js framework.",
@@ -129,7 +167,7 @@ export const skillsUnsorted: skillsInterface[] = [
   },
   {
     name: "Gitlab",
-    description: "All-in-one DevOps platform with built-in CI/CD..",
+    description: "All-in-one DevOps platform with built-in CI/CD.",
     rating: 4,
     icon: Icons.gitlab,
   },
@@ -162,13 +200,6 @@ export const skillsUnsorted: skillsInterface[] = [
     icon: Icons.postgreSql,
   },
   {
-    name: "GraphQL",
-    description:
-      "Fetch data precisely with a powerful query language for APIs and runtime execution.",
-    rating: 4,
-    icon: Icons.graphql,
-  },
-  {
     name: "Figma",
     description: "Design, prototype, and iterate together in real time.",
     rating: 4,
@@ -189,11 +220,37 @@ export const skillsUnsorted: skillsInterface[] = [
     icon: Icons.css3,
   },
   {
-    name: "Netlify",
+    name: "Jenkins",
+    description: "Automate build, test and deploy pipelines.",
+    rating: 3,
+    icon: Icons.jenkins,
+  },
+  {
+    name: "Kubernetes",
+    description: "Deploy and scale containerized services across a cluster.",
+    rating: 3,
+    icon: Icons.kubernetes,
+  },
+  {
+    name: "MQTT",
     description:
-      "Manage and organize relational databases efficiently for data-driven applications.",
-    rating: 4,
-    icon: Icons.netlify,
+      "Stream lightweight publish/subscribe messages between devices and services.",
+    rating: 3,
+    icon: Icons.mqtt,
+  },
+  {
+    name: "Firebase",
+    description:
+      "Ship auth, push notifications and realtime data without running servers.",
+    rating: 3,
+    icon: Icons.firebase,
+  },
+  {
+    name: "Go",
+    description:
+      "Write fast, simple services in a statically typed, compiled language.",
+    rating: 3,
+    icon: Icons.go,
   },
   {
     name: "AWS",
@@ -202,24 +259,11 @@ export const skillsUnsorted: skillsInterface[] = [
     icon: Icons.s3,
   },
   {
-    name: "Angular",
-    description:
-      "Build dynamic web apps with a TypeScript-based open-source framework by Google.",
-    rating: 3,
-    icon: Icons.angular,
-  },
-  {
     name: "Socket.io",
     description:
       "Enable real-time, bidirectional communication between clients and servers effortlessly.",
     rating: 3,
     icon: Icons.socketio,
-  },
-  {
-    name: "Docker",
-    description: "Containerize apps for consistent and scalable deployment.",
-    rating: 3,
-    icon: Icons.docker,
   },
   {
     name: "Notion",
@@ -250,25 +294,6 @@ export const skillsUnsorted: skillsInterface[] = [
     description: "Developer-friendly framework for web artisans.",
     rating: 2,
     icon: Icons.laravel,
-  },
-  {
-    name: "Codeigniter",
-    description: "Lightweight PHP framework for fast web apps.",
-    rating: 2,
-    icon: Icons.codeigniter,
-  },
-  {
-    name: "AdobeXD",
-    description: "Design and prototype user experiences effortlessly.",
-    rating: 2,
-    icon: Icons.adobeXD,
-  },
-  {
-    name: "Bootstrap",
-    description:
-      "Quickly create responsive and appealing web designs using a popular CSS framework.",
-    rating: 2,
-    icon: Icons.bootstrap,
   },
 ];
 

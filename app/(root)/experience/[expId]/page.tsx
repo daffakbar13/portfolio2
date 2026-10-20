@@ -4,12 +4,13 @@ import { redirect } from "next/navigation";
 
 import { Icons } from "@/components/common/icons";
 import ExperienceDescription from "@/components/experience/exp-description";
+import ProjectTile from "@/components/experience/project-tile";
 import { buttonVariants } from "@/components/ui/button";
 import ChipContainer from "@/components/ui/chip-container";
 import CustomTooltip from "@/components/ui/custom-tooltip";
 import { Experiences } from "@/config/experience";
 import { siteConfig } from "@/config/site";
-import { cn, formatDateFromObj } from "@/lib/utils";
+import { cn, formatDateRange } from "@/lib/utils";
 import daffaImg from "@/public/daffa2.png";
 
 interface ExperiencePageProps {
@@ -43,7 +44,7 @@ export default function Experience({ params }: ExperiencePageProps) {
           dateTime={Date.now().toString()}
           className="block text-sm text-muted-foreground"
         >
-          {formatDateFromObj(exp.startDate)}
+          {formatDateRange(exp.startDate, exp.endDate)}
         </time>
         <h1 className="flex items-center justify-between mt-2 text-4xl leading-tight font-heading lg:text-5xl">
           {exp.companyName}
@@ -88,14 +89,23 @@ export default function Experience({ params }: ExperiencePageProps) {
         </div>
       </div>
 
-      <Image
-        src={exp.companyLogoImg}
-        alt={exp.companyName}
-        width={720}
-        height={405}
-        className="my-8 transition-colors border rounded-md bg-muted"
-        priority
-      />
+      {exp.companyLogoImg ? (
+        <Image
+          src={exp.companyLogoImg}
+          alt={exp.companyName}
+          width={720}
+          height={405}
+          className="my-8 transition-colors border rounded-md bg-muted"
+          priority
+        />
+      ) : (
+        <ProjectTile
+          title={exp.companyName}
+          tags={exp.tileTags}
+          className="w-full my-8 border rounded-md aspect-video"
+          titleClassName="text-3xl"
+        />
+      )}
 
       <div className="mb-7 ">
         <h2 className="inline-block mb-2 text-3xl leading-tight font-heading lg:text-3xl">
@@ -109,10 +119,7 @@ export default function Experience({ params }: ExperiencePageProps) {
           Description
         </h2>
         {/* {<exp.descriptionComponent />} */}
-        <ExperienceDescription
-          paragraphs={exp.descriptionDetails.paragraphs}
-          bullets={exp.descriptionDetails.bullets}
-        />
+        <ExperienceDescription {...exp.descriptionDetails} />
       </div>
 
       <div className="mb-7 ">

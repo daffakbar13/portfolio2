@@ -3,12 +3,12 @@ export const siteConfig = {
   authorName: "M. Daffa Raihan Akbar",
   username: "daffakbar13",
   description: "M. Daffa Raihan Akbar's portfolio.",
-  url: "https://nbarkiya.xyz",
+  url: "https://daffa-akbar.vercel.app",
   links: {
     twitter: "https://x.com/daffakbar13",
     github: "https://github.com/daffakbar13",
   },
-  ogImage: "https://nbarkiya.xyz/daffa2.png",
+  ogImage: "https://daffa-akbar.vercel.app/daffa2.png",
   iconIco:
     "https://api.logo.com/api/v2/images?design=lg_DmWBUZNybLLarqDlJ0&u=3355c4fae3283be15e48aec23df7125c97369e64f5193638e0d65ec1f1ca6e96&width=500&height=400&margins=100&fit=contain&format=webp&quality=60&tightBounds=true",
   logoIcon:

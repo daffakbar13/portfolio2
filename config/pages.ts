@@ -46,15 +46,6 @@ export const pagesConfig: PagesConfig = {
       description: "Contact M. Daffa Raihan Akbar.",
     },
   },
-  contributions: {
-    title: "Contributions",
-    description: "Open-source contributions and community involvement.",
-    metadata: {
-      title: "Contributions",
-      description:
-        "M. Daffa Raihan Akbar's open-source contributions and community involvement.",
-    },
-  },
   resume: {
     title: "Resume",
     description: "M. Daffa Raihan Akbar's resume.",

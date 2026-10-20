@@ -4,9 +4,11 @@ This is the folder structure of the whole application
 ├── README.md
 ├── app
 │ ├── (root)
-│ │ ├── contact
+│ │ ├── career
+│ │ │ ├── [careerId]
+│ │ │ │ └── page.tsx
 │ │ │ └── page.tsx
-│ │ ├── contributions
+│ │ ├── contact
 │ │ │ └── page.tsx
 │ │ ├── experience
 │ │ │ ├── [expId]
@@ -21,10 +23,11 @@ This is the folder structure of the whole application
 │ ├── api
 │ │ └── contact
 │ │ └── route.ts
-│ ├── favicon.ico
+│ ├── daffa-logo.png
 │ ├── globals.css
 │ ├── layout.tsx
-│ └── manifest.ts
+│ ├── manifest.ts
+│ └── sitemap.ts
 ├── assets
 │ └── fonts
 │ ├── CalSans-SemiBold.ttf
@@ -33,24 +36,28 @@ This is the folder structure of the whole application
 │ ├── Inter-Bold.ttf
 │ └── Inter-Regular.ttf
 ├── components
+│ ├── career
+│ │ └── timeline.tsx
 │ ├── common
 │ │ ├── analytics.tsx
+│ │ ├── animated-link.tsx
+│ │ ├── animated-page-transition.tsx
 │ │ ├── animated-section.tsx
+│ │ ├── animated-text.tsx
+│ │ ├── client-page-wrapper.tsx
 │ │ ├── icons.tsx
 │ │ ├── main-nav.tsx
 │ │ ├── mobile-nav.tsx
 │ │ ├── mode-toggle.tsx
 │ │ ├── page-container.tsx
 │ │ ├── page-header.tsx
+│ │ ├── scroll-animation.tsx
 │ │ ├── site-footer.tsx
 │ │ └── theme-provider.tsx
-│ ├── contact
-│ │ └── github-redirect-card.tsx
-│ ├── contributions
-│ │ └── contribution-card.tsx
 │ ├── experience
 │ │ ├── exp-description.tsx
-│ │ └── project-card.tsx
+│ │ ├── project-card.tsx
+│ │ └── project-tile.tsx
 │ ├── forms
 │ │ └── contact-form.tsx
 │ ├── modals
@@ -79,88 +86,47 @@ This is the folder structure of the whole application
 │ └── use-toast.ts
 ├── components.json
 ├── config
+│ ├── career.ts
 │ ├── constants.ts
-│ ├── contributions.ts
 │ ├── experience.ts
 │ ├── pages.ts
 │ ├── routes.ts
 │ ├── site.ts
 │ ├── skills.ts
 │ └── socials.ts
+├── eslint.config.mjs
 ├── hooks
 │ ├── use-lock-body.ts
 │ └── use-modal-store.ts
+├── information
+│ ├── overview.md
+│ └── structure.md
 ├── lib
 │ └── utils.ts
-├── next-env.d.ts
 ├── next.config.js
 ├── package-lock.json
 ├── package.json
 ├── postcss.config.js
 ├── providers
+│ ├── animation-provider.tsx
 │ └── modal-provider.tsx
 ├── public
-│ ├── experience
-│ │ ├── apex
-│ │ │ ├── app_1.webp
-│ │ │ ├── app_2.webp
-│ │ │ ├── app_3.webp
-│ │ │ ├── app_4.webp
-│ │ │ ├── app_5.webp
-│ │ │ ├── app_6.webp
-│ │ │ ├── app_7.webp
-│ │ │ ├── db.webp
-│ │ │ └── logo.png
-│ │ ├── builtdesign
-│ │ │ ├── cli_dashboard_1.webp
-│ │ │ ├── cli_dashboard_2.webp
-│ │ │ ├── cli_dashboard_3.webp
-│ │ │ ├── landing_1.webp
-│ │ │ ├── landing_2.webp
-│ │ │ ├── landing_3.webp
-│ │ │ ├── landing_4.webp
-│ │ │ ├── landing_5.webp
-│ │ │ ├── landing_6.webp
-│ │ │ ├── logo.png
-│ │ │ └── pdf_opt.webp
-│ │ ├── builtdesign-blogs
-│ │ │ ├── blog_1.webp
-│ │ │ ├── blog_2.webp
-│ │ │ ├── blog_3.webp
-│ │ │ ├── blog_4.webp
-│ │ │ ├── blog_5.webp
-│ │ │ └── logo.png
-│ │ ├── card
-│ │ │ ├── card_1.webp
-│ │ │ ├── card_2.webp
-│ │ │ ├── card_3.webp
-│ │ │ ├── card_4.webp
-│ │ │ └── logo.png
-│ │ ├── cirql
-│ │ │ ├── logo.png
-│ │ │ ├── web_1.png
-│ │ │ ├── web_2.png
-│ │ │ ├── web_3.png
-│ │ │ └── web_4.png
-│ │ ├── hindi-keyboard
-│ │ │ ├── logo.png
-│ │ │ ├── web_1.png
-│ │ │ ├── web_2.png
-│ │ │ └── web_3.png
-│ │ ├── supercareer
-│ │ │ └── logo.png
-│ │ └── superquotes
-│ │ ├── app_1.webp
-│ │ ├── app_2.webp
-│ │ ├── app_3.webp
-│ │ ├── app_4.webp
-│ │ ├── app_5.webp
-│ │ ├── app_6.webp
-│ │ ├── app_7.webp
-│ │ └── logo.png
-│ ├── logo.png
+│ ├── career (company logos for the timeline)
+│ ├── experience (one folder of logo and screenshots per entry)
+│ │ ├── binus
+│ │ ├── bri
+│ │ ├── fitri-firman
+│ │ ├── illa-ahmad
+│ │ ├── kemenkumham
+│ │ ├── mytha-soni
+│ │ ├── nabati
+│ │ ├── portfolio
+│ │ ├── poslive
+│ │ ├── sociolla
+│ │ ├── spartan
+│ │ └── wedding
 │ ├── daffa2.png
-│ ├── next.svg
-│ └── vercel.svg
+│ ├── logo.png
+│ └── robots.txt
 ├── tailwind.config.js
 └── tsconfig.json
