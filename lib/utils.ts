@@ -22,3 +22,16 @@ export function formatDateFromObj(input: Date): string {
     year: "numeric",
   });
 }
+
+function formatMonthYear(input: Date): string {
+  return new Date(input).toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
+
+export function formatDateRange(start: Date, end: Date | "Present"): string {
+  const endText = end === "Present" ? end : formatMonthYear(end);
+  return `${formatMonthYear(start)} – ${endText}`;
+}

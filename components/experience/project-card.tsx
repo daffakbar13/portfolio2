@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Icons } from "@/components/common/icons";
+import ProjectTile from "@/components/experience/project-tile";
 import { Button } from "@/components/ui/button";
 import ChipContainer from "@/components/ui/chip-container";
 import { ExperienceInterface } from "@/config/experience";
@@ -14,12 +15,20 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="relative h-full max-w-sm p-6 border rounded-lg bg-background border-border">
       <div className="relative w-full h-[200px]">
-        <Image
-          className="object-cover border rounded-lg border-border"
-          src={project.companyLogoImg}
-          alt="img"
-          fill
-        />
+        {project.companyLogoImg ? (
+          <Image
+            className="object-cover border rounded-lg border-border"
+            src={project.companyLogoImg}
+            alt="img"
+            fill
+          />
+        ) : (
+          <ProjectTile
+            title={project.companyName}
+            tags={project.tileTags}
+            className="w-full h-full border rounded-lg border-border"
+          />
+        )}
       </div>
       <div className="pt-5 space-y-3">
         <h5 className="text-2xl font-bold tracking-tight text-foreground">

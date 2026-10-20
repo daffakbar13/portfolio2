@@ -53,9 +53,14 @@ export type ValidSkills =
   | "Spring Boot"
   | "Laravel"
   | "PHP"
-  | "ElasticSearch";
+  | "ElasticSearch"
+  | "RabbitMQ"
+  | "Kibana"
+  | "Playwright"
+  | "Claude Code";
 
 export type ValidCategory =
+  | "Software Engineer"
   | "Full Stack Developer"
   | "Frontend"
   | "Backend"
@@ -65,7 +70,8 @@ export type ValidCategory =
   | "UI/UX"
   | "Web Dev"
   | "Mobile Dev"
-  | "3D Modeling";
+  | "3D Modeling"
+  | "AI-assisted";
 
 export type ValidExpType = "Personal Project" | "Professional";
 
@@ -75,5 +81,4 @@ export type ValidPages =
   | "experience"
   | "career"
   | "contact"
-  | "contributions"
   | "resume";

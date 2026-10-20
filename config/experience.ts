@@ -6,8 +6,15 @@ interface PagesInfoInterface {
   description?: string;
 }
 
+interface HighlightInterface {
+  title: string;
+  description: string;
+}
+
 interface DescriptionDetailsInterface {
   paragraphs: string[];
+  highlights?: HighlightInterface[];
+  bulletsTitle?: string;
   bullets: string[];
 }
 
@@ -21,8 +28,10 @@ export interface ExperienceInterface {
   githubLink?: string;
   techStack: ValidSkills[];
   startDate: Date;
-  endDate: Date;
-  companyLogoImg: any;
+  endDate: Date | "Present";
+  // without a logo the cards show a title tile instead, with tileTags under it
+  companyLogoImg?: any;
+  tileTags?: string[];
   descriptionDetails: DescriptionDetailsInterface;
   pagesInfoArr: PagesInfoInterface[];
 }
@@ -32,9 +41,9 @@ export const Experiences: ExperienceInterface[] = [
     id: "sociolla",
     companyName: "Sociolla",
     type: "Professional",
-    category: ["Full Stack Developer", "On Site"],
+    category: ["Software Engineer", "On Site"],
     shortDescription:
-      "Worked as a fullstack developer on the non-commerce team, responsible for building and maintaining internal tools and service integrations to support business operations. Collaborated closely with cross-functional teams across Indonesia, India, and Vietnam, ensuring smooth communication and delivery across time zones.",
+      "Software Engineer on the non-commerce team: built SHIELD HRMS, the customer chat platform and chatbot, Google Business reviews sync and the GenPinkCon 2026 check-in dashboard.",
     websiteLink: "https://www.sociolla.com",
     techStack: [
       "Node.js",
@@ -46,9 +55,12 @@ export const Experiences: ExperienceInterface[] = [
       "Typescript",
       "AWS",
       "ElasticSearch",
+      "Redis",
+      "RabbitMQ",
+      "Kibana",
     ],
     startDate: new Date("2023-11-01"),
-    endDate: new Date(),
+    endDate: "Present",
     companyLogoImg: "/experience/sociolla/logo.png",
     pagesInfoArr: [
       {
@@ -56,6 +68,11 @@ export const Experiences: ExperienceInterface[] = [
         description:
           "The Most Complete & Trusted Cosmetic Site #1 in Indonesia",
         imgArr: ["/experience/sociolla/sociolla.png"],
+      },
+      {
+        title: "SHIELD",
+        description: "HRMS for Sociolla Employees",
+        imgArr: ["/experience/sociolla/shield.png"],
       },
       {
         title: "Lilla",
@@ -74,17 +91,33 @@ export const Experiences: ExperienceInterface[] = [
           "Aplikasi yang bikin beauty journey-mu makin mudah, sat set penuhi semua kebutuhan cantikmu!",
         imgArr: ["/experience/sociolla/soco.png"],
       },
-      {
-        title: "SHIELD",
-        description: "HRMS for Sociolla Employees",
-        imgArr: ["/experience/sociolla/shield.png"],
-      },
     ],
     descriptionDetails: {
       paragraphs: [
-        "Worked as a fullstack developer on the non-commerce team, responsible for building and maintaining internal tools and service integrations to support business operations. Collaborated closely with cross-functional teams across Indonesia, India, and Vietnam, ensuring smooth communication and delivery across time zones.",
-        "Responsibilities:",
+        "Software Engineer on the non-commerce team, building and maintaining internal tools and service integrations that support business operations. Collaborated closely with cross-functional teams across Indonesia, India, and Vietnam, ensuring smooth communication and delivery across time zones.",
+        "Key projects:",
       ],
+      highlights: [
+        {
+          title: "SHIELD HRMS",
+          description: "the HR system Sociolla employees use every day.",
+        },
+        {
+          title: "Customer chat platform and chatbot",
+          description:
+            "conversations between customers and customer care, with a chatbot that answers first.",
+        },
+        {
+          title: "Google Business reviews sync",
+          description:
+            "brings store reviews from Google Business Profile into internal tools so the team can follow up in one place.",
+        },
+        {
+          title: "Event check-in dashboard (GenPinkCon 2026)",
+          description: "ticket check-in and live attendance for the event.",
+        },
+      ],
+      bulletsTitle: "Responsibilities:",
       bullets: [
         "Developed scalable backend services using Node.js, Express.js, and MongoDB, with a focus on clean architecture and maintainability.",
         "Built dynamic frontend interfaces with Vue.js to improve user experience for internal tools and dashboards.",
@@ -103,7 +136,7 @@ export const Experiences: ExperienceInterface[] = [
     shortDescription: "Presidential Palace Infrastructure Management System.",
     techStack: ["Vue.js", "Tailwind CSS", "Laravel", "PostgreSQL"],
     startDate: new Date("2024-10-01"),
-    endDate: new Date("2023-02-01"),
+    endDate: new Date("2025-02-01"),
     companyLogoImg: "/experience/spartan/logo.svg",
     pagesInfoArr: [
       {
@@ -379,20 +412,49 @@ export const Experiences: ExperienceInterface[] = [
     },
   },
   {
+    id: "st-daffa-moritz-office",
+    companyName: "St. Daffa Moritz Office",
+    type: "Personal Project",
+    category: ["Full Stack Developer", "AI-assisted"],
+    shortDescription:
+      "An AI-assisted dev workflow: PM, design, dev and QA desks on Claude Code take a rough idea to a reviewed pull request, plus a PR review bot.",
+    techStack: ["Typescript", "Node.js", "Claude Code", "Playwright"],
+    startDate: new Date("2026-09-01"),
+    endDate: "Present",
+    tileTags: ["PM", "Design", "Dev", "QA"],
+    pagesInfoArr: [],
+    descriptionDetails: {
+      paragraphs: [
+        "St. Daffa Moritz Office is a local dashboard that runs my side projects like a small team. Each ticket moves through four desks on Claude Code, and I approve the work at each hand-off.",
+        "How it works:",
+      ],
+      bullets: [
+        "PM desk turns a rough idea into a user story with Given/When/Then acceptance criteria.",
+        "Design desk builds a clickable HTML mockup from the project's own components and screenshots it at mobile and desktop widths.",
+        "Dev desk makes the smallest change that meets the criteria, verifies it and opens a draft pull request.",
+        "QA desk writes and runs Playwright end-to-end tests and reports pass, fail or flaky with trace and video.",
+        "A PR review bot checks pull requests against a fixed checklist and posts blockers with file and line.",
+      ],
+    },
+  },
+  {
     id: "portfolio",
     companyName: "My Portfolio",
     type: "Personal Project",
     category: ["Full Stack Developer"],
-    shortDescription: "A simple portfolio website",
-    techStack: ["React", "Next.js", "Typescript", "Material UI"],
-    startDate: new Date("2023-09-01"),
-    endDate: new Date("2024-10-01"),
+    shortDescription:
+      "This site: my developer portfolio with experience, career timeline and skills, built with Next.js and Tailwind CSS.",
+    techStack: ["Next.js", "Tailwind CSS"],
+    startDate: new Date("2025-05-01"),
+    endDate: "Present",
     companyLogoImg: "/experience/portfolio/logo.png",
-    websiteLink: "https://daffakbar13.vercel.app",
-    githubLink: "https://github.com/daffakbar13/portfolio",
+    websiteLink: "https://daffa-akbar.vercel.app",
+    githubLink: "https://github.com/daffakbar13/portfolio2",
     pagesInfoArr: [],
     descriptionDetails: {
-      paragraphs: ["A simple portfolio website"],
+      paragraphs: [
+        "This site: my developer portfolio with experience, career timeline and skills, built with Next.js and Tailwind CSS.",
+      ],
       bullets: [],
     },
   },

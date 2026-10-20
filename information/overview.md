@@ -1,6 +1,6 @@
 # Portfolio Website Navigation Overview
 
-This document outlines the navigation structure of the portfolio website [https://nbarkiya.xyz/](https://nbarkiya.xyz/), detailing each page and its primary sections to facilitate understanding and interaction.
+This document outlines the navigation structure of M. Daffa Raihan Akbar's portfolio website [https://daffa-akbar.vercel.app/](https://daffa-akbar.vercel.app/), detailing each page and its primary sections to facilitate understanding and interaction.
 
 ---
 
@@ -8,11 +8,11 @@ This document outlines the navigation structure of the portfolio website [https:
 
 The website's main navigation menu is accessible from all pages and includes the following links:
 
-1. **Home**: [https://nbarkiya.xyz/](https://nbarkiya.xyz/)
-2. **Skills**: [https://nbarkiya.xyz/skills](https://nbarkiya.xyz/skills)
-3. **Experience**: [https://nbarkiya.xyz/experience](https://nbarkiya.xyz/experience)
-4. **Contributions**: [https://nbarkiya.xyz/contributions](https://nbarkiya.xyz/contributions)
-5. **Contact**: [https://nbarkiya.xyz/contact](https://nbarkiya.xyz/contact)
+1. **Home**: [https://daffa-akbar.vercel.app/](https://daffa-akbar.vercel.app/)
+2. **Skills**: [https://daffa-akbar.vercel.app/skills](https://daffa-akbar.vercel.app/skills)
+3. **Experience**: [https://daffa-akbar.vercel.app/experience](https://daffa-akbar.vercel.app/experience)
+4. **Career**: [https://daffa-akbar.vercel.app/career](https://daffa-akbar.vercel.app/career)
+5. **Contact**: [https://daffa-akbar.vercel.app/contact](https://daffa-akbar.vercel.app/contact)
 
 ---
 
@@ -20,47 +20,49 @@ The website's main navigation menu is accessible from all pages and includes the
 
 ### 1. Home
 
-**URL:** [https://nbarkiya.xyz/](https://nbarkiya.xyz/)
+**URL:** [https://daffa-akbar.vercel.app/](https://daffa-akbar.vercel.app/)
 
 **Sections:**
 
-- **Introduction**: Presents the individual's name and role (e.g., "Full Stack Developer").
+- **Introduction**: Presents the name and role ("Full Stack Developer").
 - **Skills Overview**: Highlights key skills with a prompt to view all skills.
 - **Experience Highlights**: Summarizes notable projects with links to detailed descriptions.
-- **Contributions Summary**: Lists recent open-source contributions with links for more information.
 
 ### 2. Skills
 
-**URL:** [https://nbarkiya.xyz/skills](https://nbarkiya.xyz/skills)
+**URL:** [https://daffa-akbar.vercel.app/skills](https://daffa-akbar.vercel.app/skills)
 
 **Sections:**
 
-- **Technical Skills**: Enumerates various technologies and tools, each accompanied by a brief description.
+- **Technical Skills**: Enumerates various technologies and tools, each accompanied by a brief description and a rating.
 
 ### 3. Experience
 
-**URL:** [https://nbarkiya.xyz/experience](https://nbarkiya.xyz/experience)
+**URL:** [https://daffa-akbar.vercel.app/experience](https://daffa-akbar.vercel.app/experience)
 
 **Sections:**
 
-- **Professional Projects**: Details projects with descriptions, roles, and links to read more.
+- **Professional and Personal Projects**: Details projects with descriptions, roles, and links to read more.
 
-### 4. Contributions
+### 4. Career
 
-**URL:** [https://nbarkiya.xyz/contributions](https://nbarkiya.xyz/contributions)
+**URL:** [https://daffa-akbar.vercel.app/career](https://daffa-akbar.vercel.app/career)
 
 **Sections:**
 
-- **Open-Source Contributions**: Lists contributions with descriptions and links to the respective repositories.
+- **Career Timeline**: Lists each position with its company, dates and skills.
 
 ### 5. Contact
 
-**URL:** [https://nbarkiya.xyz/contact](https://nbarkiya.xyz/contact)
+**URL:** [https://daffa-akbar.vercel.app/contact](https://daffa-akbar.vercel.app/contact)
 
 **Sections:**
 
-- **Contact Form**: Fields for name, email, message, and optional social links.
-- **GitHub Link**: Provides a link to the source code of the website's template.
+- **Contact Form**: Fields for name, email and message.
+
+### 6. Resume
+
+**URL:** [https://daffa-akbar.vercel.app/resume](https://daffa-akbar.vercel.app/resume)
 
 ---
 
