@@ -2,11 +2,18 @@ export const siteConfig = {
   name: "M. Daffa Raihan Akbar | Developer Portfolio",
   authorName: "M. Daffa Raihan Akbar",
   username: "daffakbar13",
+  brand: "daffa.dev",
+  initials: "DR",
+  role: "Software Engineer",
+  currentCompany: "Sociolla",
+  location: "Jakarta, ID",
+  email: "daffaraihan03@gmail.com",
   description: "M. Daffa Raihan Akbar's portfolio.",
   url: "https://nbarkiya.xyz",
   links: {
     twitter: "https://x.com/daffakbar13",
     github: "https://github.com/daffakbar13",
+    linkedin: "https://www.linkedin.com/in/daffa-raihan-akbar",
   },
   ogImage: "https://nbarkiya.xyz/daffa2.png",
   iconIco:

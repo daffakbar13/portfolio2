@@ -15,6 +15,10 @@ export interface ExperienceInterface {
   id: string;
   type: ValidExpType;
   companyName: string;
+  /** Product / project name shown as the card title. */
+  projectName?: string;
+  /** One-line summary used on cards. */
+  tagline?: string;
   category: ValidCategory[];
   shortDescription: string;
   websiteLink?: string;
@@ -30,6 +34,9 @@ export interface ExperienceInterface {
 export const Experiences: ExperienceInterface[] = [
   {
     id: "sociolla",
+    projectName: "Sociolla",
+    tagline:
+      "Internal tools and service integrations for the non-commerce team, built with squads in Indonesia, India and Vietnam.",
     companyName: "Sociolla",
     type: "Professional",
     category: ["Full Stack Developer", "On Site"],
@@ -97,6 +104,9 @@ export const Experiences: ExperienceInterface[] = [
   },
   {
     id: "spartan",
+    projectName: "Palace Infrastructure System",
+    tagline:
+      "Presidential Palace infrastructure management: assets, maintenance and service requests.",
     companyName: "Confidential",
     type: "Professional",
     category: ["Full Stack Developer", "Remote"],
@@ -140,6 +150,9 @@ export const Experiences: ExperienceInterface[] = [
   },
   {
     id: "binus",
+    projectName: "Sokrates Superapps",
+    tagline:
+      "A microservice backend for threads, articles, videos and community tools across BINUS tenants.",
     companyName: "Binus University",
     type: "Professional",
     category: ["Backend", "Remote"],
@@ -184,6 +197,9 @@ export const Experiences: ExperienceInterface[] = [
   },
   {
     id: "poslive",
+    projectName: "Multi-merchant POS",
+    tagline:
+      "Web POS for retail and F&B: variants, real-time stock, promotions and RBAC.",
     companyName: "Confidential",
     type: "Professional",
     category: ["UI/UX", "Frontend", "Remote"],
@@ -259,6 +275,9 @@ export const Experiences: ExperienceInterface[] = [
   },
   {
     id: "nabati",
+    projectName: "eDOT Distribution System",
+    tagline:
+      "B2B & B2C sales, inventory deductions and shipping coordination in one web app.",
     companyName: "PT Kaldu Sari Nabati Indonesia",
     type: "Professional",
     category: ["Frontend", "Remote"],
@@ -304,6 +323,9 @@ export const Experiences: ExperienceInterface[] = [
   },
   {
     id: "bri",
+    projectName: "BRI Pension Portal",
+    tagline:
+      "Articles and a community forum for the bank’s pension clients.",
     companyName: "PT Bank Rakyat Indonesia",
     type: "Professional",
     category: ["Full Stack Developer", "Remote"],
@@ -351,6 +373,9 @@ export const Experiences: ExperienceInterface[] = [
   },
   {
     id: "kemenkumham",
+    projectName: "Guest Registration",
+    tagline:
+      "Guest registration with digital signatures and visitor diagrams.",
     companyName: "Rupbasan Kelas I Bandung",
     type: "Professional",
     category: ["Full Stack Developer", "On Site"],
@@ -380,6 +405,9 @@ export const Experiences: ExperienceInterface[] = [
   },
   {
     id: "portfolio",
+    projectName: "My Portfolio",
+    tagline:
+      "The site you are looking at.",
     companyName: "My Portfolio",
     type: "Personal Project",
     category: ["Full Stack Developer"],
@@ -398,6 +426,9 @@ export const Experiences: ExperienceInterface[] = [
   },
   {
     id: "mytha-soni",
+    projectName: "Mytha & Soni",
+    tagline:
+      "Digital wedding invitation with RSVP and guest wishes.",
     companyName: "Wedding Invitation Website",
     type: "Personal Project",
     category: ["Full Stack Developer"],
@@ -435,6 +466,9 @@ export const Experiences: ExperienceInterface[] = [
   },
   {
     id: "illa-ahmad",
+    projectName: "Illa & Ahmad",
+    tagline:
+      "Digital wedding invitation with RSVP and guest wishes.",
     companyName: "Wedding Invitation Website",
     type: "Personal Project",
     category: ["Full Stack Developer"],
@@ -473,6 +507,9 @@ export const Experiences: ExperienceInterface[] = [
   },
   {
     id: "fitri-firman",
+    projectName: "Fitri & Firman",
+    tagline:
+      "Digital wedding invitation with RSVP and guest wishes.",
     companyName: "Wedding Invitation Website",
     type: "Personal Project",
     category: ["Full Stack Developer"],
@@ -509,6 +546,9 @@ export const Experiences: ExperienceInterface[] = [
   },
   {
     id: "wedding",
+    projectName: "My Wedding Invitation",
+    tagline:
+      "My own digital wedding invitation with RSVP and guest wishes.",
     companyName: "My Wedding Invitation Website",
     type: "Personal Project",
     category: ["Full Stack Developer"],
@@ -545,6 +585,8 @@ export const Experiences: ExperienceInterface[] = [
   },
 ];
 
-export const featuredExperiences = Experiences.filter((_, i) =>
-  [0, 1, 4].includes(i)
-);
+export const featuredExperienceIds = ["sociolla", "binus", "nabati"];
+
+export const featuredExperiences = featuredExperienceIds
+  .map((id) => Experiences.find((exp) => exp.id === id))
+  .filter((exp): exp is ExperienceInterface => Boolean(exp));
