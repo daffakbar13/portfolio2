@@ -208,7 +208,7 @@ export default function IndexPage() {
           </Link>
         </div>
         <div className="grid auto-rows-[minmax(200px,auto)] grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-4">
-          <div className="asm flex md:col-span-2 md:row-span-2" style={{ ["--ry" as string]: "-30deg", animationRange: "entry 0% cover 30%" }}>
+          <div className="asm flex md:col-span-2 md:row-span-2" style={{ ["--asm-ry" as string]: "-30deg", animationRange: "entry 0% cover 30%" }}>
             <TiltCard className="flex flex-1 flex-col justify-between gap-8 rounded-[28px] border border-line/[.08] bg-surface p-7 md:p-8">
               <div aria-hidden="true" className="absolute -right-[60px] -top-[60px] h-[260px] w-[260px] rounded-full border-[40px] border-lime/[.16]" />
               <div className="relative">
@@ -227,14 +227,14 @@ export default function IndexPage() {
               </ul>
             </TiltCard>
           </div>
-          <div className="asm flex" style={{ ["--ry" as string]: "28deg", animationRange: "entry 5% cover 35%" }}>
+          <div className="asm flex" style={{ ["--asm-ry" as string]: "28deg", animationRange: "entry 5% cover 35%" }}>
             <TiltCard className="flex flex-1 flex-col justify-between gap-5 rounded-[28px] bg-lime p-7 text-ink">
               <div className="font-mono text-xs">{bento.backend.label}</div>
               <div className="font-display text-[30px] font-bold leading-[1.05] tracking-[-0.03em]">{bento.backend.heading}</div>
               <div className="text-sm">{bento.backend.body}</div>
             </TiltCard>
           </div>
-          <div className="asm flex" style={{ ["--ry" as string]: "-22deg", animationRange: "entry 10% cover 40%" }}>
+          <div className="asm flex" style={{ ["--asm-ry" as string]: "-22deg", animationRange: "entry 10% cover 40%" }}>
             <TiltCard className="flex flex-1 flex-col justify-between gap-5 rounded-[28px] border border-line/[.08] bg-surface p-7">
               <div className="font-mono text-xs text-mute">{bento.data.label}</div>
               <div className="flex flex-wrap gap-2">
@@ -244,14 +244,14 @@ export default function IndexPage() {
               </div>
             </TiltCard>
           </div>
-          <div className="asm flex" style={{ ["--ry" as string]: "32deg", animationRange: "entry 15% cover 45%" }}>
+          <div className="asm flex" style={{ ["--asm-ry" as string]: "32deg", animationRange: "entry 15% cover 45%" }}>
             <TiltCard className="flex flex-1 flex-col justify-between gap-5 rounded-[28px] border border-line/[.08] bg-surface p-7">
               <div className="font-mono text-xs text-mute">{bento.mobile.label}</div>
               <div className="font-display text-[30px] font-bold tracking-[-0.03em]">{bento.mobile.heading}</div>
               <div className="text-sm text-mute">{bento.mobile.body}</div>
             </TiltCard>
           </div>
-          <div className="asm flex" style={{ ["--ry" as string]: "-26deg", animationRange: "entry 20% cover 50%" }}>
+          <div className="asm flex" style={{ ["--asm-ry" as string]: "-26deg", animationRange: "entry 20% cover 50%" }}>
             <TiltCard className="flex flex-1 flex-col justify-between gap-5 rounded-[28px] bg-violet p-7 text-ink">
               <div className="font-mono text-xs">{bento.languages.label}</div>
               <div className="flex flex-col gap-1.5 font-display text-[22px] font-semibold">
