@@ -1,7 +1,6 @@
-import { MainNav } from "@/components/common/main-nav";
-import { ModeToggle } from "@/components/common/mode-toggle";
-import { SiteFooter } from "@/components/common/site-footer";
-import { routesConfig } from "@/config/routes";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { PointerParallax } from "@/components/motion/pointer-parallax";
 
 interface MarketingLayoutProps {
   children: React.ReactNode;
@@ -9,29 +8,16 @@ interface MarketingLayoutProps {
 
 export default function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="container z-50 bg-background">
-        <div className="flex h-20 items-center justify-between py-6">
-          <MainNav items={routesConfig.mainNav} />
-          <nav className="flex items-center gap-5">
-            {/* <Link
-                            href={"https://github.com/daffakbar13"}
-                            target="_blank"
-                            className={cn(
-                                buttonVariants({
-                                    variant: "ghost",
-                                    size: "sm",
-                                }),
-                                "h-8 w-8 px-0"
-                            )}
-                        >
-                            <Icons.gitHub className="w-5 h-5" />
-                        </Link> */}
-            <ModeToggle />
-          </nav>
-        </div>
-      </header>
-      <main className="container flex-1">{children}</main>
+    <div className="flex min-h-screen flex-col overflow-x-clip">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-full focus:bg-lime focus:px-4 focus:py-2 focus:text-ink"
+      >
+        Skip to content
+      </a>
+      <PointerParallax />
+      <SiteHeader />
+      {children}
       <SiteFooter />
     </div>
   );

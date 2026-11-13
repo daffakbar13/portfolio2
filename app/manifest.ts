@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "M. Daffa Raihan Akbar's portfolio.",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#000000",
+    background_color: "#08090D",
+    theme_color: "#C8FF3D",
     icons: [
       {
         src: "/daffa-logo.png",
