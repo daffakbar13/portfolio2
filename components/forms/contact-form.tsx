@@ -1,11 +1,11 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 import { Icons } from "@/components/common/icons";
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -29,7 +29,13 @@ const formSchema = z.object({
   social: z.string().url().optional().or(z.literal("")),
 });
 
-export function ContactForm() {
+export function ContactForm({
+  title = "Send a message",
+  note = "Usually replies within 1–2 days.",
+}: {
+  title?: string;
+  note?: string;
+}) {
   const storeModal = useModalStore();
 
   // const [open, setOpen] = useState(false);
@@ -70,24 +76,28 @@ export function ContactForm() {
     }
   }
 
+  const field =
+    "h-[52px] rounded-[14px] border-line/[.12] bg-well px-[18px] text-base text-fg placeholder:text-mute focus-visible:ring-lime focus-visible:ring-offset-0";
+
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 min-w-full"
+        noValidate
+        className="flex min-w-0 flex-col gap-[22px] self-start rounded-[32px] border border-line/[.08] bg-surface p-6 md:flex-[1_1_480px] md:p-10"
       >
+        <h2 className="mb-1.5 mt-0 font-display text-[30px] font-bold tracking-[-0.03em]">
+          {title}
+        </h2>
         <FormField
           control={form.control}
           name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
+          render={({ field: f }) => (
+            <FormItem className="flex flex-col gap-2 space-y-0">
+              <FormLabel className="text-sm font-medium text-fg-2">Name</FormLabel>
               <FormControl>
-                <Input placeholder="Enter your name" {...field} />
+                <Input placeholder="Your name" autoComplete="name" className={field} {...f} />
               </FormControl>
-              {/* <FormDescription>
-                                This is your public display name.
-                            </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
@@ -95,11 +105,11 @@ export function ContactForm() {
         <FormField
           control={form.control}
           name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
+          render={({ field: f }) => (
+            <FormItem className="flex flex-col gap-2 space-y-0">
+              <FormLabel className="text-sm font-medium text-fg-2">Email</FormLabel>
               <FormControl>
-                <Input placeholder="Enter your email" {...field} />
+                <Input type="email" placeholder="you@company.com" autoComplete="email" className={field} {...f} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -108,33 +118,30 @@ export function ContactForm() {
         <FormField
           control={form.control}
           name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
+          render={({ field: f }) => (
+            <FormItem className="flex flex-col gap-2 space-y-0">
+              <FormLabel className="text-sm font-medium text-fg-2">Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="Enter your message" {...field} />
+                <Textarea
+                  rows={6}
+                  placeholder="Tell me about your project"
+                  className="min-h-[150px] resize-y rounded-[14px] border-line/[.12] bg-well px-[18px] py-4 text-base leading-normal text-fg placeholder:text-mute focus-visible:ring-lime focus-visible:ring-offset-0"
+                  {...f}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="social"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Social (optional)</FormLabel>
-              <FormControl>
-                <Input placeholder="Link for social account" {...field} />
-              </FormControl>
-              {/* <FormDescription>
-                                This is your public display name.
-                            </FormDescription> */}
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Submit</Button>
+        <button
+          type="submit"
+          disabled={form.formState.isSubmitting}
+          className="btn-lime h-14 w-full disabled:opacity-60"
+        >
+          Send message
+          <ArrowRight className="h-[18px] w-[18px]" aria-hidden="true" />
+        </button>
+        <p className="m-0 text-[13px] text-mute">{note}</p>
       </form>
     </Form>
   );
