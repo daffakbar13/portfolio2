@@ -222,12 +222,12 @@ function Grid({ items }: { items: ProjectCard[] }) {
   return (
     <section className="mx-auto max-w-[1280px] px-4 pb-24 pt-6 md:px-8 md:pb-40 md:pt-10">
       <ul className="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] gap-5 p-0">
-        {items.map((p) => (
+        {items.map((p, i) => (
           <li key={p.id} className="reveal-soft flex">
             <TiltCard maxX={6} maxY={8} glare={0.18} className="flex flex-1 rounded-[28px] border border-line/[.08] bg-surface">
               <Link href={`/experience/${p.id}`} className="flex flex-1 flex-col gap-5 px-4 pb-6 pt-4 text-fg">
                 <span className="relative block aspect-[16/10] overflow-hidden rounded-[18px] bg-surface-2">
-                  <Cover p={p} sizes="(min-width: 768px) 400px, 100vw" />
+                  <Cover p={p} sizes="(min-width: 768px) 400px, 100vw" eager={i < 3} />
                 </span>
                 <span className="flex flex-col gap-2.5 px-2">
                   <span className="flex justify-between gap-3 font-mono text-xs text-mute">
