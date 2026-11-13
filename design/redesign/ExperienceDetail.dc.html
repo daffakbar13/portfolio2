@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sociolla — Case study</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#08090D}
+a{color:#F2F3F7;text-decoration:none}a:hover{color:#C8FF3D}
+.glass{position:relative;isolation:isolate;background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.03)),rgba(12,13,18,.42);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.32),inset 0 -1px 0 rgba(255,255,255,.05),0 24px 48px -24px rgba(0,0,0,.7)}
+.glass::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:radial-gradient(120% 70% at 15% 0%,rgba(255,255,255,.16),transparent 45%);pointer-events:none}
+.fan{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.char{display:inline-block;animation:charIn .9s cubic-bezier(.2,.8,.2,1) both;transform-origin:50% 100%}
+@keyframes charIn{from{opacity:0;transform:perspective(600px) translateY(70%) rotateX(-95deg)}to{opacity:1;transform:none}}
+.pagein{animation:pageIn .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes pageIn{from{opacity:0;transform:perspective(1600px) translateZ(-220px) rotateX(5deg)}to{opacity:1;transform:none}}
+.stage:hover .f1{transform:translateX(-340px) translateZ(-120px) rotateY(28deg)}
+.stage:hover .f2{transform:translateX(-170px) translateZ(-40px) rotateY(16deg)}
+.stage:hover .f4{transform:translateX(170px) translateZ(-40px) rotateY(-16deg)}
+.stage:hover .f5{transform:translateX(340px) translateZ(-120px) rotateY(-28deg)}
+@supports (animation-timeline: view()){
+.reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
+@keyframes reveal{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+.zoomout{animation:zoomout linear both;animation-timeline:view();animation-range:exit 0% exit 80%}
+@keyframes zoomout{to{transform:perspective(1200px) rotateX(24deg) scale(.86);opacity:.2}}
+}
+</style>
+</helmet>
+<div class="pagein" style="width: 100%; min-height: 100vh; background: #08090D; color: #F2F3F7; font-family: Inter, system-ui, sans-serif; overflow-x: clip">
+  <header style="max-width: 1280px; margin: 0 auto; padding: 32px 32px 0; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box">
+    <a href="Experience.dc.html" class="glass" style="display: inline-flex; align-items: center; gap: 10px; height: 44px; padding: 0 18px; border-radius: 999px; font-weight: 600; font-size: 14px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>
+      All work
+    </a>
+    <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #A1A5B5">CASE STUDY 01 / 09</span>
+  </header>
+
+  <section style="max-width: 1280px; margin: 0 auto; padding: 80px 32px 0; box-sizing: border-box">
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px">
+      <span style="padding: 6px 12px; border-radius: 99px; background: #C8FF3D; color: #08090D; font-size: 13px; font-weight: 600">Full Stack Developer</span>
+      <span style="padding: 6px 12px; border-radius: 99px; border: 1px solid rgba(255,255,255,0.14); font-size: 13px">On Site</span>
+      <span style="padding: 6px 12px; border-radius: 99px; border: 1px solid rgba(255,255,255,0.14); font-size: 13px">Nov 2023 — Present</span>
+    </div>
+    <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(64px, 12vw, 200px); line-height: 0.85; letter-spacing: -0.06em" aria-label="Sociolla"><span aria-hidden="true"><sc-for list="{{h1}}" as="ch" hint-placeholder-count="8"><span class="char" style="animation-delay: {{ch.d}}">{{ch.c}}</span></sc-for></span></h1>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 56px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.08)">
+      <div><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A1A5B5; margin-bottom: 8px">COMPANY</div><div style="font-size: 17px">PT Sociolla Ritel Indonesia</div></div>
+      <div><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A1A5B5; margin-bottom: 8px">TEAM</div><div style="font-size: 17px">Non-commerce · ID / IN / VN</div></div>
+      <div><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A1A5B5; margin-bottom: 8px">ROLE</div><div style="font-size: 17px">Software Engineer</div></div>
+      <div><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A1A5B5; margin-bottom: 8px">LINK</div><a href="https://www.sociolla.com" style="font-size: 17px; border-bottom: 1px solid currentColor">sociolla.com ↗</a></div>
+    </div>
+  </section>
+
+  <!-- 3D FAN OF PRODUCTS -->
+  <section class="zoomout" style="padding: 96px 32px 40px; box-sizing: border-box">
+    <div class="stage" aria-label="Products worked on" style="position: relative; height: 520px; perspective: 1600px; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d">
+      <div class="fan f1" style="position: absolute; width: 300px; height: 420px; border-radius: 24px; background: linear-gradient(140deg, rgba(255,255,255,0.22), rgba(255,255,255,0.04) 55%), rgba(17,19,25,0.35); border: 1px solid rgba(255,255,255,0.28); box-shadow: inset 0 1px 0 rgba(255,255,255,0.5); transform: translateX(-220px) translateZ(-120px) rotateY(18deg); display: flex; flex-direction: column; justify-content: space-between; padding: 22px; box-sizing: border-box"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #A1A5B5">[ shield.png ]</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">SHIELD</span></div>
+      <div class="fan f2" style="position: absolute; width: 300px; height: 420px; border-radius: 24px; background: #8B7CFF; color: #08090D; transform: translateX(-110px) translateZ(-40px) rotateY(10deg); display: flex; flex-direction: column; justify-content: space-between; padding: 22px; box-sizing: border-box"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px">[ lilla.png ]</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Lilla</span></div>
+      <div class="fan f4" style="position: absolute; width: 300px; height: 420px; border-radius: 24px; background: #F2F3F7; color: #08090D; transform: translateX(110px) translateZ(-40px) rotateY(-10deg); display: flex; flex-direction: column; justify-content: space-between; padding: 22px; box-sizing: border-box"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px">[ soco.png ]</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">SOCO</span></div>
+      <div class="fan f5" style="position: absolute; width: 300px; height: 420px; border-radius: 24px; background: linear-gradient(140deg, rgba(255,255,255,0.22), rgba(255,255,255,0.04) 55%), rgba(17,19,25,0.35); border: 1px solid rgba(255,255,255,0.28); box-shadow: inset 0 1px 0 rgba(255,255,255,0.5); transform: translateX(220px) translateZ(-120px) rotateY(-18deg); display: flex; flex-direction: column; justify-content: space-between; padding: 22px; box-sizing: border-box"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #A1A5B5">[ beautyjournal.png ]</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Beauty Journal</span></div>
+      <div class="fan" style="position: absolute; width: 340px; height: 460px; border-radius: 24px; background: #C8FF3D; color: #08090D; transform: translateZ(60px); box-shadow: 0 40px 80px -20px rgba(0,0,0,.8); display: flex; flex-direction: column; justify-content: space-between; padding: 24px; box-sizing: border-box"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px">[ sociolla.png ]</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700">Sociolla</span></div>
+    </div>
+    <p style="text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A1A5B5; margin: 16px 0 0">hover to fan out</p>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section style="max-width: 1280px; margin: 0 auto; padding: 120px 32px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 64px">
+    <div class="reveal" style="flex: 1 1 320px; min-width: 0">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C8FF3D; margin-bottom: 16px">OVERVIEW</div>
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 44px; line-height: 1.05; letter-spacing: -0.035em">Tools that keep a beauty empire running.</h2>
+    </div>
+    <div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+      <p class="reveal" style="margin: 0 0 28px; font-size: 19px; line-height: 1.65; color: #D5D7E0">Worked as a fullstack developer on the non-commerce team, building and maintaining internal tools and service integrations that support business operations — in close collaboration with teams in Indonesia, India and Vietnam.</p>
+      <div class="reveal" style="display: flex; gap: 20px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.08)"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C8FF3D">01</span><span style="font-size: 16px; line-height: 1.6; color: #D5D7E0">Scalable backend services on Node.js, Express and MongoDB with clean, maintainable architecture.</span></div>
+      <div class="reveal" style="display: flex; gap: 20px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.08)"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C8FF3D">02</span><span style="font-size: 16px; line-height: 1.6; color: #D5D7E0">Dynamic Vue.js interfaces for internal tools and dashboards.</span></div>
+      <div class="reveal" style="display: flex; gap: 20px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.08)"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C8FF3D">03</span><span style="font-size: 16px; line-height: 1.6; color: #D5D7E0">Elasticsearch for fast retrieval and analytics over large operational data.</span></div>
+      <div class="reveal" style="display: flex; gap: 20px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.08)"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C8FF3D">04</span><span style="font-size: 16px; line-height: 1.6; color: #D5D7E0">Background jobs and async workflows on RabbitMQ; observability through Kibana.</span></div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 120px; box-sizing: border-box">
+    <div class="reveal" style="border-radius: 32px; background: #111319; border: 1px solid rgba(255,255,255,0.08); padding: 48px; display: flex; flex-direction: column; gap: 28px">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #A1A5B5">TECH STACK</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
+        <span style="padding: 12px 20px; border-radius: 99px; background: #1B1E27; font-size: 16px; font-weight: 500">Node.js</span>
+        <span style="padding: 12px 20px; border-radius: 99px; background: #1B1E27; font-size: 16px; font-weight: 500">express.js</span>
+        <span style="padding: 12px 20px; border-radius: 99px; background: #1B1E27; font-size: 16px; font-weight: 500">Vue.js</span>
+        <span style="padding: 12px 20px; border-radius: 99px; background: #1B1E27; font-size: 16px; font-weight: 500">MongoDB</span>
+        <span style="padding: 12px 20px; border-radius: 99px; background: #1B1E27; font-size: 16px; font-weight: 500">React Native</span>
+        <span style="padding: 12px 20px; border-radius: 99px; background: #1B1E27; font-size: 16px; font-weight: 500">JavaScript</span>
+        <span style="padding: 12px 20px; border-radius: 99px; background: #1B1E27; font-size: 16px; font-weight: 500">TypeScript</span>
+        <span style="padding: 12px 20px; border-radius: 99px; background: #1B1E27; font-size: 16px; font-weight: 500">AWS</span>
+        <span style="padding: 12px 20px; border-radius: 99px; background: #1B1E27; font-size: 16px; font-weight: 500">ElasticSearch</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT -->
+  <a href="ExperienceDetail.dc.html" style="display: block; border-top: 1px solid rgba(255,255,255,0.08); color: #F2F3F7">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 72px 32px 96px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #A1A5B5; margin-bottom: 12px">NEXT PROJECT</div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(44px, 7vw, 96px); font-weight: 700; letter-spacing: -0.045em; line-height: 0.95">Palace Infrastructure</div>
+      </div>
+      <span style="display: inline-flex; width: 88px; height: 88px; border-radius: 999px; background: #C8FF3D; color: #08090D; align-items: center; justify-content: center">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg>
+      </span>
+    </div>
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { h1: 'Sociolla'.split('').map((c, i) => ({ c, d: (0.1 + i * 0.05).toFixed(3) + 's' })) };
+  }
+}
+</script>
+</body>
+</html>
