@@ -26,7 +26,7 @@ test.describe('PF-3 Stack: upgrade to Next.js 16 and React 19', () => {
 			// Then it renders
 			expect(response?.status(), path).toBeLessThan(400);
 			await expect(page.getByRole('main')).toBeVisible();
-			await expect(page.getByRole('link', { name: 'daffa.dev', exact: true })).toBeVisible();
+			await expect(page.getByRole('link', { name: 'Daffa Akbar', exact: true })).toBeVisible();
 		}
 
 		// Then no console errors were logged

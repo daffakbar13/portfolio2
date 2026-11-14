@@ -6,12 +6,12 @@ import { cn } from "@/lib/utils";
 
 export interface GlobePlace {
   label: string;
-  color: "lime" | "violet" | "cyan";
+  color: "lime" | "violet" | "cyan" | "coral";
   lon: number;
   lat: number;
 }
 
-const dot = { lime: "bg-lime", violet: "bg-violet", cyan: "bg-cyan" };
+const dot = { lime: "bg-lime", violet: "bg-violet", cyan: "bg-cyan", coral: "bg-coral" };
 const MERIDIANS = [0, 30, 60, 90, 120, 150];
 
 /** Draggable wireframe globe with auto-spin. Decorative; the legend carries the info. */

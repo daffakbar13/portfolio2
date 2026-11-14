@@ -4,12 +4,12 @@
  */
 export const homeConfig = {
   hero: {
-    badge: "Software Engineer @ Sociolla · Jakarta, ID",
-    badgeShort: "Software Engineer @ Sociolla",
+    badge: "Asst. Lead Software Engineer @ Sociolla · Jakarta, ID",
+    badgeShort: "Asst. Lead Software Engineer @ Sociolla",
     headingLabel: "Full-stack engineer who ships.",
     headingLines: ["Full-stack", "engineer who", "ships."],
     intro:
-      "I design APIs, data pipelines and interfaces across Node.js, Vue, React and MongoDB — currently building internal platforms at Sociolla with teams in Indonesia, India and Vietnam.",
+      "I design APIs, data pipelines and interfaces across Node.js, Vue, React and MongoDB — currently building internal platforms at Sociolla with teams in Indonesia, India, Vietnam and Singapore.",
     introShort:
       "APIs, data pipelines and interfaces across Node.js, Vue, React and MongoDB.",
     primaryCta: { label: "View my work", shortLabel: "View work", href: "/experience" },
@@ -111,6 +111,7 @@ export const pageCopy = {
       { label: "Jakarta · home · GMT+7", color: "lime", lon: 106.8, lat: 6.2 },
       { label: "India · team", color: "violet", lon: 78, lat: -21 },
       { label: "Vietnam · team", color: "cyan", lon: 106, lat: -16 },
+      { label: "Singapore · team", color: "coral", lon: 103.8, lat: -1.3 },
     ],
   },
   contributions: {

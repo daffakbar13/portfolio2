@@ -31,6 +31,7 @@ module.exports = {
         lime: token("lime"),
         "lime-ink": token("lime-ink"),
         violet: token("violet"),
+        coral: token("coral"),
         cyan: token("cyan"),
         track: token("track"),
         line: token("line"),

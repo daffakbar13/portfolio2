@@ -36,12 +36,12 @@ export const Experiences: ExperienceInterface[] = [
     id: "sociolla",
     projectName: "Sociolla",
     tagline:
-      "Internal tools and service integrations for the non-commerce team, built with squads in Indonesia, India and Vietnam.",
+      "Internal tools and service integrations for the non-commerce team, built with squads in Indonesia, India, Vietnam and Singapore.",
     companyName: "Sociolla",
     type: "Professional",
     category: ["Full Stack Developer", "On Site"],
     shortDescription:
-      "Worked as a fullstack developer on the non-commerce team, responsible for building and maintaining internal tools and service integrations to support business operations. Collaborated closely with cross-functional teams across Indonesia, India, and Vietnam, ensuring smooth communication and delivery across time zones.",
+      "Worked as a fullstack developer on the non-commerce team, responsible for building and maintaining internal tools and service integrations to support business operations. Collaborated closely with cross-functional teams across Indonesia, India, Vietnam, and Singapore, ensuring smooth communication and delivery across time zones.",
     websiteLink: "https://www.sociolla.com",
     techStack: [
       "Node.js",
@@ -89,7 +89,7 @@ export const Experiences: ExperienceInterface[] = [
     ],
     descriptionDetails: {
       paragraphs: [
-        "Worked as a fullstack developer on the non-commerce team, responsible for building and maintaining internal tools and service integrations to support business operations. Collaborated closely with cross-functional teams across Indonesia, India, and Vietnam, ensuring smooth communication and delivery across time zones.",
+        "Worked as a fullstack developer on the non-commerce team, responsible for building and maintaining internal tools and service integrations to support business operations. Collaborated closely with cross-functional teams across Indonesia, India, Vietnam, and Singapore, ensuring smooth communication and delivery across time zones.",
         "Responsibilities:",
       ],
       bullets: [
