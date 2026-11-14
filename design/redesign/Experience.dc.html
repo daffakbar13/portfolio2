@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Experience</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#08090D}
+a{color:#F2F3F7;text-decoration:none}a:hover{color:#C8FF3D}
+.navlink{color:#A1A5B5}.navlink:hover{color:#F2F3F7}
+.glass{position:relative;isolation:isolate;background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.03)),rgba(12,13,18,.42);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.32),inset 0 -1px 0 rgba(255,255,255,.05),0 24px 48px -24px rgba(0,0,0,.7)}
+.glass::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:radial-gradient(120% 70% at 15% 0%,rgba(255,255,255,.16),transparent 45%);pointer-events:none}
+.blob{position:absolute;z-index:-1;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,-40px) scale(1.15)}100%{transform:translate(-40px,30px) scale(.95)}}
+.char{display:inline-block;animation:charIn .9s cubic-bezier(.2,.8,.2,1) both;transform-origin:50% 100%}
+@keyframes charIn{from{opacity:0;transform:perspective(600px) translateY(70%) rotateX(-95deg)}to{opacity:1;transform:none}}
+.pagein{animation:pageIn .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes pageIn{from{opacity:0;transform:perspective(1600px) translateZ(-220px) rotateX(5deg)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){
+.reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
+@keyframes reveal{from{opacity:0;transform:perspective(900px) translateY(80px) rotateX(20deg) scale(.96)}to{opacity:1;transform:none}}
+}
+</style>
+</helmet>
+<div class="pagein" style="width: 100%; min-height: 100vh; background: #08090D; color: #F2F3F7; font-family: Inter, system-ui, sans-serif; overflow-x: clip">
+  <header style="position: sticky; top: 16px; z-index: 50; display: flex; justify-content: center; padding: 16px 24px 0">
+    <nav aria-label="Main" class="glass" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 28px; padding: 10px 10px 10px 20px; border-radius: 999px; max-width: 1100px; width: 100%; box-sizing: border-box">
+      <a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px"><span style="display: inline-flex; width: 32px; height: 32px; border-radius: 10px; background: #C8FF3D; color: #08090D; align-items: center; justify-content: center; font-size: 14px">DR</span>daffa.dev</a>
+      <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: 14px; font-weight: 500">
+        <a class="navlink" href="Skills.dc.html">Skills</a>
+        <a href="Experience.dc.html" aria-current="page" style="color: #F2F3F7">Experience</a>
+        <a class="navlink" href="Career.dc.html">Career</a>
+        <a class="navlink" href="Contact.dc.html">Contact</a>
+      </div>
+      <a href="Contact.dc.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; background: #F2F3F7; color: #08090D; font-weight: 600; font-size: 14px">Resume ↗</a>
+    </nav>
+  </header>
+
+  <section style="position: relative; isolation: isolate; max-width: 1280px; margin: 0 auto; padding: 112px 32px 32px; box-sizing: border-box">
+    <div class="blob" style="width: 420px; height: 420px; right: 6%; top: 60px; background: #C8FF3D; opacity: .3"></div>
+    <div class="blob" style="width: 380px; height: 380px; right: 26%; top: 240px; background: #8B7CFF; opacity: .45; animation-delay: -6s"></div>
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C8FF3D; margin-bottom: 20px">EXPERIENCE · {{count}} PROJECTS</div>
+    <h1 aria-label="Selected work." style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(56px, 9vw, 140px); line-height: 0.9; letter-spacing: -0.05em">
+      <span aria-hidden="true" style="display: block"><sc-for list="{{h1a}}" as="ch" hint-placeholder-count="8"><span class="char" style="animation-delay: {{ch.d}}">{{ch.c}}</span></sc-for></span>
+      <span aria-hidden="true" style="display: block"><sc-for list="{{h1b}}" as="ch" hint-placeholder-count="5"><span class="char" style="animation-delay: {{ch.d}}">{{ch.c}}</span></sc-for></span>
+    </h1>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: 48px">
+      <div role="group" aria-label="Filter projects" class="glass" style="display: flex; flex-wrap: wrap; gap: 8px; padding: 6px; border-radius: 999px">
+        <sc-for list="{{filters}}" as="f" hint-placeholder-count="3">
+          <button type="button" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="height: 44px; padding: 0 20px; border-radius: 999px; border: 0; cursor: pointer; font: 600 14px Inter, sans-serif; background: {{f.bg}}; color: {{f.fg}}">{{f.label}}</button>
+        </sc-for>
+      </div>
+      <div role="group" aria-label="View" class="glass" style="display: flex; gap: 6px; padding: 6px; border-radius: 999px">
+        <sc-for list="{{views}}" as="v" hint-placeholder-count="2">
+          <button type="button" onClick="{{v.pick}}" aria-pressed="{{v.pressed}}" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 0; cursor: pointer; font: 600 14px Inter, sans-serif; background: {{v.bg}}; color: {{v.fg}}">{{v.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D CURVED CAROUSEL -->
+  <sc-if value="{{isCarousel}}" hint-placeholder-val="{{ true }}">
+    <section aria-label="Project carousel" style="position: relative; isolation: isolate; padding: 40px 0 120px">
+      <div onPointerDown="{{onDown}}" onPointerMove="{{onDrag}}" onPointerUp="{{onUp}}" onPointerLeave="{{onUp}}" style="position: relative; height: 560px; perspective: 1800px; cursor: grab; touch-action: pan-y; user-select: none">
+        <div style="position: absolute; left: 50%; top: 40px; width: 0; height: 0; transform-style: preserve-3d; transition: {{ringTransition}}; transform: {{ringT}}">
+          <sc-for list="{{carousel}}" as="p" hint-placeholder-count="6">
+            <a href="ExperienceDetail.dc.html" draggable="false" style="position: absolute; left: -170px; top: 0; width: 340px; height: 440px; box-sizing: border-box; padding: 14px 14px 22px; border-radius: 28px; display: flex; flex-direction: column; gap: 16px; color: #F2F3F7; background: linear-gradient(140deg, rgba(255,255,255,0.18), rgba(255,255,255,0.03) 55%), rgba(17,19,25,0.7); border: 1px solid rgba(255,255,255,0.22); box-shadow: inset 0 1px 0 rgba(255,255,255,0.45); transform: {{p.t}}; filter: brightness({{p.dim}}); transition: filter .6s">
+              <div style="aspect-ratio: 16 / 11; border-radius: 18px; background: {{p.shotBg}}; display: flex; align-items: flex-end; justify-content: space-between; padding: 16px; box-sizing: border-box">
+                <span style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.03em; color: {{p.shotFg}}">{{p.mono}}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: {{p.shotFg}}">[ screenshot ]</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px; padding: 0 6px">
+                <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A1A5B5"><span>{{p.type}}</span><span>{{p.period}}</span></div>
+                <span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1">{{p.name}}</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #A1A5B5">{{p.desc}}</span>
+              </div>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center; gap: 20px">
+        <button type="button" aria-label="Previous project" onClick="{{prev}}" class="glass" style="width: 52px; height: 52px; border-radius: 999px; color: #F2F3F7; display: inline-flex; align-items: center; justify-content: center; cursor: pointer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+        </button>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #A1A5B5; min-width: 120px; text-align: center">{{counter}} · drag to spin</span>
+        <button type="button" aria-label="Next project" onClick="{{next}}" class="glass" style="width: 52px; height: 52px; border-radius: 999px; color: #F2F3F7; display: inline-flex; align-items: center; justify-content: center; cursor: pointer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+        </button>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- GRID WITH POINTER TILT -->
+  <sc-if value="{{isGrid}}" hint-placeholder-val="{{ false }}">
+    <section style="max-width: 1280px; margin: 0 auto; padding: 40px 32px 160px; box-sizing: border-box">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px">
+        <sc-for list="{{grid}}" as="p" hint-placeholder-count="6">
+          <a href="ExperienceDetail.dc.html" class="reveal" onMouseMove="{{p.move}}" onMouseLeave="{{p.leave}}" style="position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 20px; padding: 16px 16px 24px; border-radius: 28px; background: #111319; border: 1px solid rgba(255,255,255,0.08); color: #F2F3F7; transform: {{p.tt}}; transition: transform .25s ease-out">
+            <div style="aspect-ratio: 16 / 10; border-radius: 18px; background: {{p.shotBg}}; display: flex; align-items: flex-end; justify-content: space-between; padding: 18px; box-sizing: border-box">
+              <span style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; letter-spacing: -0.03em; color: {{p.shotFg}}">{{p.mono}}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: {{p.shotFg}}">[ screenshot ]</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 0 8px">
+              <div style="display: flex; justify-content: space-between; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A1A5B5"><span>{{p.type}}</span><span>{{p.period}}</span></div>
+              <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 28px; letter-spacing: -0.03em; line-height: 1.1">{{p.name}}</h2>
+              <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #A1A5B5">{{p.desc}}</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px">
+                <sc-for list="{{p.stack}}" as="s" hint-placeholder-count="4"><span style="padding: 5px 10px; border-radius: 99px; background: #1B1E27; font-size: 12px; color: #D5D7E0">{{s}}</span></sc-for>
+              </div>
+            </div>
+            <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: inherit; background: {{p.glare}}; pointer-events: none"></span>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2400}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'All', view: 'Carousel', angle: 0, drag: null, tilt: { key: null } };
+  }
+  renderVals() {
+    const all = [
+      { name: 'Sociolla', type: 'Professional', period: '2023 — Now', mono: 'SOCIOLLA', shotBg: '#C8FF3D', shotFg: '#08090D', desc: 'Internal tools and service integrations for the non-commerce team, across Indonesia, India and Vietnam.', stack: ['Node.js', 'Vue.js', 'MongoDB', 'ElasticSearch'] },
+      { name: 'Palace Infrastructure System', type: 'Professional', period: 'Confidential', mono: 'INFRA', shotBg: '#1B1E27', shotFg: '#A1A5B5', desc: 'Presidential Palace infrastructure management system.', stack: ['Vue.js', 'Tailwind CSS', 'Laravel', 'PostgreSQL'] },
+      { name: 'Sokrates Superapps', type: 'Professional', period: '2023', mono: 'BINUS', shotBg: '#8B7CFF', shotFg: '#08090D', desc: 'Scalable backend for a unified platform of mini apps for BINUS tenants.', stack: ['Node.js', 'Express', 'TypeScript'] },
+      { name: 'Multi-merchant POS', type: 'Professional', period: 'Confidential', mono: 'POS', shotBg: '#1B1E27', shotFg: '#A1A5B5', desc: 'Web POS for retail and F&B: variants, real-time stock, promotions and RBAC.', stack: ['React', 'Next.js', 'Figma'] },
+      { name: 'eDOT Distribution System', type: 'Professional', period: '2022 — 2023', mono: 'EDOT', shotBg: '#F2F3F7', shotFg: '#08090D', desc: 'B2B & B2C sales, inventory deductions and shipping coordination.', stack: ['React', 'TypeScript', 'Redux'] },
+      { name: 'BRI Pension Portal', type: 'Professional', period: '2020 — 2022', mono: 'BRI', shotBg: '#1B1E27', shotFg: '#A1A5B5', desc: 'Articles and community forum for the bank’s pension clients.', stack: ['React', 'Node.js', 'MySQL'] },
+      { name: 'Guest Registration', type: 'Professional', period: '2020', mono: 'RUPBASAN', shotBg: '#1B1E27', shotFg: '#A1A5B5', desc: 'Guest registration with digital signatures and visitor diagrams.', stack: ['React', 'Node.js'] },
+      { name: 'My Portfolio', type: 'Personal Project', period: 'Personal', mono: 'DR', shotBg: '#C8FF3D', shotFg: '#08090D', desc: 'The site you are looking at.', stack: ['Next.js', 'TypeScript', 'Tailwind CSS'] },
+      { name: 'Wedding Invitation', type: 'Personal Project', period: 'Personal', mono: 'RSVP', shotBg: '#8B7CFF', shotFg: '#08090D', desc: 'Digital wedding invitations with RSVP.', stack: ['React', 'Next.js', 'Tailwind CSS'] }
+    ];
+    const s = this.state;
+    const split = (str, d0) => str.split('').map((c, i) => ({ c: c === ' ' ? ' ' : c, d: (d0 + i * 0.04).toFixed(3) + 's' }));
+    const f = s.filter;
+    const items = all.filter((p) => f === 'All' || (f === 'Professional' ? p.type === 'Professional' : p.type === 'Personal Project'));
+    const n = items.length;
+    const step = 360 / n;
+    const R = Math.max(380, Math.round(185 / Math.tan(Math.PI / n)) + 70);
+    const front = ((Math.round(-s.angle / step) % n) + n) % n;
+    const carousel = items.map((p, i) => ({ ...p, t: 'rotateY(' + (i * step) + 'deg) translateZ(' + R + 'px)' + (i === front ? ' scale(1.05)' : ' scale(0.94)'), dim: i === front ? '1' : '0.5' }));
+    const grid = items.map((p, i) => {
+      const on = s.tilt.key === i;
+      return {
+        ...p,
+        tt: on ? 'perspective(1000px) rotateX(' + s.tilt.rx + 'deg) rotateY(' + s.tilt.ry + 'deg) translateZ(10px)' : 'perspective(1000px) rotateX(0deg) rotateY(0deg)',
+        glare: on ? 'radial-gradient(circle at ' + s.tilt.gx + '% ' + s.tilt.gy + '%, rgba(255,255,255,0.18), transparent 45%)' : 'none',
+        move: (e) => {
+          const r = e.currentTarget.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width;
+          const y = (e.clientY - r.top) / r.height;
+          this.setState({ tilt: { key: i, rx: Math.round((0.5 - y) * 12), ry: Math.round((x - 0.5) * 16), gx: Math.round(x * 100), gy: Math.round(y * 100) } });
+        },
+        leave: () => this.setState({ tilt: { key: null } })
+      };
+    });
+    const pill = (label, active, pick) => ({ label, pressed: active ? 'true' : 'false', bg: active ? '#C8FF3D' : 'transparent', fg: active ? '#08090D' : '#A1A5B5', pick });
+    return {
+      count: String(all.length),
+      h1a: split('Selected', 0.1),
+      h1b: split('work.', 0.45),
+      filters: ['All', 'Professional', 'Personal'].map((l) => pill(l, l === f, () => this.setState({ filter: l, angle: 0 }))),
+      views: ['Carousel', 'Grid'].map((l) => pill(l, l === s.view, () => this.setState({ view: l }))),
+      isCarousel: s.view === 'Carousel',
+      isGrid: s.view === 'Grid',
+      carousel,
+      grid,
+      ringT: 'translateZ(-' + R + 'px) rotateY(' + s.angle + 'deg)',
+      ringTransition: s.drag ? 'none' : 'transform .9s cubic-bezier(.2,.8,.2,1)',
+      counter: String(front + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0'),
+      prev: () => this.setState({ angle: s.angle + step }),
+      next: () => this.setState({ angle: s.angle - step }),
+      onDown: (e) => this.setState({ drag: { x0: e.clientX, a0: s.angle } }),
+      onDrag: (e) => { if (this.state.drag) this.setState({ angle: this.state.drag.a0 + (e.clientX - this.state.drag.x0) * 0.25 }); },
+      onUp: () => { if (this.state.drag) this.setState({ drag: null, angle: Math.round(this.state.angle / step) * step }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

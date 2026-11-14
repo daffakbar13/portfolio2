@@ -16,7 +16,7 @@ export interface CareerExperienceInterface {
 export const careerExperiences: CareerExperienceInterface[] = [
   {
     id: "sociolla",
-    position: "Software Engineer",
+    position: "Asst. Lead Software Engineer",
     company: "PT Sociolla Ritel Indonesia",
     location: "Jakarta, Indonesia",
     startDate: new Date("2023-11-01"),

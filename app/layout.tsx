@@ -1,7 +1,7 @@
 import "./globals.css";
 
-import { Inter as FontSans } from "next/font/google";
-import localFont from "next/font/local";
+import type { Viewport } from "next";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 
 import { Analytics } from "@/components/common/analytics";
 import { ThemeProvider } from "@/components/common/theme-provider";
@@ -10,16 +10,34 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { ModalProvider } from "@/providers/modal-provider";
 
-const fontSans = FontSans({
+// All three families are SIL Open Font License.
+const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
 });
 
-// Font files can be colocated inside of `pages`
-const fontHeading = localFont({
-  src: "../assets/fonts/CalSans-SemiBold.woff2",
-  variable: "--font-heading",
+const fontDisplay = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
 });
+
+const fontMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#08090D" },
+    { media: "(prefers-color-scheme: light)", color: "#F6F7FA" },
+  ],
+  colorScheme: "dark light",
+};
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -95,28 +113,47 @@ export const metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-canvas font-sans text-fg antialiased",
           fontSans.variable,
-          fontHeading.variable
+          fontDisplay.variable,
+          fontMono.variable
         )}
       >
+        {/* Refraction filter used by `.liquid` glass (Chromium only) */}
+        <svg
+          aria-hidden="true"
+          width="0"
+          height="0"
+          style={{ position: "absolute" }}
+        >
+          <defs>
+            <filter id="lg" x="0" y="0" width="100%" height="100%">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.008 0.012"
+                numOctaves={2}
+                seed={7}
+                result="n"
+              />
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="n"
+                scale={38}
+                xChannelSelector="R"
+                yChannelSelector="G"
+              />
+            </filter>
+          </defs>
+        </svg>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
-          themes={[
-            "light",
-            "dark",
-            "retro",
-            "cyberpunk",
-            "paper",
-            "aurora",
-            "synthwave",
-          ]}
+          defaultTheme="dark"
+          enableSystem={false}
+          themes={["dark", "light"]}
+          disableTransitionOnChange
         >
           {children}
           <Analytics />

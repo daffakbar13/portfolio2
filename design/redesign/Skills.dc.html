@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Skills</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#08090D}
+a{color:#F2F3F7;text-decoration:none}a:hover{color:#C8FF3D}
+.navlink{color:#A1A5B5}.navlink:hover{color:#F2F3F7}
+.glass{position:relative;isolation:isolate;background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.03)),rgba(12,13,18,.42);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.32),inset 0 -1px 0 rgba(255,255,255,.05),0 24px 48px -24px rgba(0,0,0,.7)}
+.glass::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:radial-gradient(120% 70% at 15% 0%,rgba(255,255,255,.16),transparent 45%);pointer-events:none}
+.blob{position:absolute;z-index:-1;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,-40px) scale(1.15)}100%{transform:translate(-40px,30px) scale(.95)}}
+.flip{perspective:1000px}
+.flipin{transition:transform .7s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.flip:hover .flipin,.flip:focus-within .flipin{transform:rotateY(180deg)}
+.face{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.back{transform:rotateY(180deg)}
+.char{display:inline-block;animation:charIn .9s cubic-bezier(.2,.8,.2,1) both;transform-origin:50% 100%}
+@keyframes charIn{from{opacity:0;transform:perspective(600px) translateY(70%) rotateX(-95deg)}to{opacity:1;transform:none}}
+.pagein{animation:pageIn .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes pageIn{from{opacity:0;transform:perspective(1600px) translateZ(-220px) rotateX(5deg)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){
+.reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
+@keyframes reveal{from{opacity:0;transform:translateY(50px) scale(.94)}to{opacity:1;transform:none}}
+}
+</style>
+</helmet>
+<div class="pagein" style="width: 100%; min-height: 100vh; background: #08090D; color: #F2F3F7; font-family: Inter, system-ui, sans-serif">
+  <header style="position: sticky; top: 16px; z-index: 50; display: flex; justify-content: center; padding: 16px 24px 0">
+    <nav aria-label="Main" class="glass" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 28px; padding: 10px 10px 10px 20px; border-radius: 999px; max-width: 1100px; width: 100%; box-sizing: border-box">
+      <a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px"><span style="display: inline-flex; width: 32px; height: 32px; border-radius: 10px; background: #C8FF3D; color: #08090D; align-items: center; justify-content: center; font-size: 14px">DR</span>daffa.dev</a>
+      <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: 14px; font-weight: 500">
+        <a href="Skills.dc.html" aria-current="page" style="color: #F2F3F7">Skills</a>
+        <a class="navlink" href="Experience.dc.html">Experience</a>
+        <a class="navlink" href="Career.dc.html">Career</a>
+        <a class="navlink" href="Contact.dc.html">Contact</a>
+      </div>
+      <a href="Contact.dc.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; background: #F2F3F7; color: #08090D; font-weight: 600; font-size: 14px">Resume ↗</a>
+    </nav>
+  </header>
+
+  <section style="position: relative; isolation: isolate; max-width: 1280px; margin: 0 auto; padding: 112px 32px 48px; box-sizing: border-box">
+    <div class="blob" style="width: 420px; height: 420px; right: 4%; top: 80px; background: #8B7CFF; opacity: .45"></div>
+    <div class="blob" style="width: 360px; height: 360px; right: 30%; top: 260px; background: #C8FF3D; opacity: .28; animation-delay: -6s"></div>
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C8FF3D; margin-bottom: 20px">SKILLS · {{total}} TOTAL</div>
+    <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(56px, 9vw, 140px); line-height: 0.9; letter-spacing: -0.05em" aria-label="Toolbox."><span aria-hidden="true"><sc-for list="{{h1}}" as="ch" hint-placeholder-count="8"><span class="char" style="animation-delay: {{ch.d}}">{{ch.c}}</span></sc-for></span></h1>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: 40px">
+      <p style="margin: 0; max-width: 460px; font-size: 18px; line-height: 1.6; color: #A1A5B5">Key skills that define my professional identity. Hover a card to flip it.</p>
+      <div role="group" aria-label="Filter skills" class="glass" style="display: flex; flex-wrap: wrap; gap: 6px; padding: 6px; border-radius: 28px">
+        <sc-for list="{{tabs}}" as="t" hint-placeholder-count="6">
+          <button type="button" onClick="{{t.pick}}" aria-pressed="{{t.pressed}}" style="height: 44px; padding: 0 18px; border-radius: 999px; cursor: pointer; font: 600 14px Inter, sans-serif; border: 1px solid {{t.border}}; background: {{t.bg}}; color: {{t.fg}}">{{t.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 160px; box-sizing: border-box">
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px">
+      <sc-for list="{{skills}}" as="s" hint-placeholder-count="12">
+        <div class="flip reveal" tabindex="0" style="height: 240px; outline-color: #C8FF3D">
+          <div class="flipin" style="position: relative; width: 100%; height: 100%">
+            <div class="face" style="position: absolute; inset: 0; border-radius: 24px; padding: 22px; box-sizing: border-box; background: {{s.bg}}; color: {{s.fg}}; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; justify-content: space-between">
+              <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; opacity: .8"><span>{{s.cat}}</span><span>{{s.num}}</span></div>
+              <div>
+                <div style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05">{{s.name}}</div>
+                <div style="display: flex; gap: 4px; margin-top: 14px">
+                  <sc-for list="{{s.bars}}" as="b" hint-placeholder-count="5"><span style="flex: 1; height: 5px; border-radius: 3px; background: {{b.c}}"></span></sc-for>
+                </div>
+              </div>
+            </div>
+            <div class="face back" style="position: absolute; inset: 0; border-radius: 24px; padding: 22px; box-sizing: border-box; background: linear-gradient(140deg, rgba(139,124,255,0.42), rgba(255,255,255,0.06) 60%), rgba(17,19,25,0.92); border: 1px solid rgba(255,255,255,0.22); box-shadow: inset 0 1px 0 rgba(255,255,255,0.45); color: #F2F3F7; display: flex; flex-direction: column; justify-content: space-between">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px">{{s.level}}</div>
+              <p style="margin: 0; font-size: 15px; line-height: 1.5">{{s.desc}}</p>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2200}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tab: 'All' };
+  }
+  renderVals() {
+    const raw = [
+      ['React', 'Frontend', 5, 'Interactive UIs with components, state, props and the virtual DOM.'],
+      ['TypeScript', 'Frontend', 5, 'Static types that make JavaScript understandable and reliable.'],
+      ['Next.js', 'Frontend', 5, 'Routing, layouts, loading UI and API routes for dynamic apps.'],
+      ['Vue.js', 'Frontend', 5, 'Progressive framework for internal tools and dashboards.'],
+      ['JavaScript', 'Frontend', 5, 'The language under everything I ship.'],
+      ['Tailwind CSS', 'Frontend', 5, 'Utility-first styling for fast, consistent UI.'],
+      ['Node.js', 'Backend', 5, 'Event-driven services, workers and APIs.'],
+      ['express.js', 'Backend', 5, 'Fast, unopinionated APIs on Node.js.'],
+      ['Nest.js', 'Backend', 4, 'Structured, modular Node.js backends.'],
+      ['GraphQL', 'Backend', 4, 'Typed, client-shaped APIs.'],
+      ['MongoDB', 'Data', 5, 'Document modelling, aggregation and indexing.'],
+      ['ElasticSearch', 'Data', 4, 'Search and analytics over large datasets.'],
+      ['PostgreSQL', 'Data', 4, 'Relational modelling with strong consistency.'],
+      ['MySQL', 'Data', 4, 'Relational storage for transactional apps.'],
+      ['React Native', 'Mobile', 4, 'Cross-platform apps from one codebase.'],
+      ['Redux', 'Frontend', 4, 'Predictable state for complex front ends.'],
+      ['Material UI', 'Frontend', 4, 'Component library for fast product UI.'],
+      ['AWS', 'Tools', 3, 'Cloud services for deploys and storage.'],
+      ['Jira', 'Tools', 5, 'Planning and tracking across teams.'],
+      ['Figma', 'Tools', 4, 'Design hand-off and UI prototyping.'],
+      ['Bahasa Indonesia', 'Languages', 5, 'Native speaker.'],
+      ['English', 'Languages', 4, 'Professional working proficiency.'],
+      ['Arabic', 'Languages', 3, 'Conversational.']
+    ];
+    const levels = ['', 'Beginner', 'Familiar', 'Proficient', 'Advanced', 'Expert'];
+    const tab = this.state.tab;
+    const filtered = raw.filter((r) => tab === 'All' || r[1] === tab);
+    const skills = filtered.map((r, i) => {
+      const hi = i % 7 === 0;
+      return {
+        name: r[0], cat: r[1].toUpperCase(), desc: r[3], level: levels[r[2]].toUpperCase() + ' · ' + r[2] + '/5',
+        num: String(i + 1).padStart(2, '0'),
+        bg: hi ? '#C8FF3D' : '#111319', fg: hi ? '#08090D' : '#F2F3F7',
+        bars: [1, 2, 3, 4, 5].map((n) => ({ c: n <= r[2] ? (hi ? '#08090D' : '#C8FF3D') : (hi ? 'rgba(8,9,13,0.2)' : '#2A2D3A') }))
+      };
+    });
+    const tabs = ['All', 'Frontend', 'Backend', 'Data', 'Mobile', 'Tools', 'Languages'].map((label) => ({
+      label, pressed: label === tab ? 'true' : 'false',
+      bg: label === tab ? '#C8FF3D' : 'transparent', fg: label === tab ? '#08090D' : '#A1A5B5',
+      border: label === tab ? '#C8FF3D' : 'transparent',
+      pick: () => this.setState({ tab: label })
+    }));
+    const h1 = 'Toolbox.'.split('').map((c, i) => ({ c, d: (0.1 + i * 0.045).toFixed(3) + 's' }));
+    return { skills, tabs, total: '30', h1 };
+  }
+}
+</script>
+</body>
+</html>

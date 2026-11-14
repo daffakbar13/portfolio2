@@ -1,13 +1,14 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
+const token = (name) => `rgb(var(--c-${name}) / <alpha-value>)`;
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./config/**/*.{ts,tsx}",
   ],
   theme: {
     container: {
@@ -19,43 +20,64 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        // Midnight Lime tokens
+        canvas: token("canvas"),
+        surface: token("surface"),
+        "surface-2": token("surface-2"),
+        well: token("well"),
+        fg: token("fg"),
+        "fg-2": token("fg-2"),
+        mute: token("mute"),
+        lime: token("lime"),
+        "lime-ink": token("lime-ink"),
+        violet: token("violet"),
+        coral: token("coral"),
+        cyan: token("cyan"),
+        track: token("track"),
+        line: token("line"),
+        "fill-dim": token("fill-dim"),
+        ink: "#08090D",
+        danger: token("danger"),
+        // shadcn aliases mapped onto the palette
+        border: token("border"),
+        input: token("border"),
+        ring: token("lime"),
+        background: token("canvas"),
+        foreground: token("fg"),
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: token("lime"),
+          foreground: "#08090D",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: token("surface-2"),
+          foreground: token("fg"),
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: token("danger"),
+          foreground: "#08090D",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: token("surface-2"),
+          foreground: token("mute"),
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: token("surface-2"),
+          foreground: token("fg"),
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: token("surface"),
+          foreground: token("fg"),
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: token("surface"),
+          foreground: token("fg"),
         },
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
-        heading: ["var(--font-heading)", ...fontFamily.sans],
+        display: ["var(--font-display)", ...fontFamily.sans],
+        heading: ["var(--font-display)", ...fontFamily.sans],
+        mono: ["var(--font-mono)", ...fontFamily.mono],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -79,16 +101,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-  safelist: [
-    "dark",
-    "retro",
-    "cyberpunk",
-    "paper",
-    "aurora",
-    "synthwave",
-    {
-      pattern:
-        /^(.*?)(dark|retro|cyberpunk|paper|aurora|synthwave)([:.])(.*?)$/,
-    },
-  ],
 };
